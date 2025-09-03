@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -13,7 +14,7 @@ using static Funcitons.NormalFunc;
 
 namespace Quick60s.apiForms
 {
-    public partial class HistoryToday : Form
+    public partial class DoyinHot : Form
     {
         public class API
         {
@@ -21,63 +22,44 @@ namespace Quick60s.apiForms
             {
                 public int code { get; set; }
                 public string message { get; set; }
-                public API.Data data { get; set; }
+                public API.Data[] data { get; set; }
             }
 
             public class Data
             {
-                public string date { get; set; }
-                public API.Event[] items { get; set; }
-            }
-
-            public class Event
-            {
                 public string title { get; set; }
-                public string year { get; set; }
-                public string description { get; set; }
-                public string event_type { get; set; }
+                public int hot_value { get; set; }
+                public string link { get; set; }
+                public string event_time { get; set; }
             }
         }
 
-        public API.Root APIData;
+        public static API.Root APIData;
 
         public async void RefreshAPI()
         {
             try
             {
+                button_Refresh.Enabled = false;
+                listView_main.Enabled = false;
+
                 using (HttpClient client = new HttpClient())
                 {
-                    File.WriteAllText(Main_Window.TempPath, await client.GetStringAsync(Main_Window.APIURL.historyToday));
+                    File.WriteAllText(Main_Window.TempPath, await client.GetStringAsync(Main_Window.APIURL.doyinHot));
                     APIData = ReadJson<API.Root>(Main_Window.TempPath);
                 }
 
                 if (APIData.code == 200)
                 {
-                    label_Date.Text = $"日期: {APIData.data.date}";
-
                     listView_main.Items.Clear();
-                    for (int i = 0; i < APIData.data.items.Length; i++)
-                    {
-                        ListViewItem item = new ListViewItem($"{APIData.data.items[i].title}");
-                        item.SubItems.Add($"{APIData.data.items[i].year}");
-                        item.SubItems.Add($"{APIData.data.items[i].description}");
 
-                        if (APIData.data.items[i].event_type == "event")
-                        {
-                            item.SubItems.Add($"事件");
-                        }
-                        else if (APIData.data.items[i].event_type == "death")
-                        {
-                            item.SubItems.Add("逝世");
-                        }
-                        else if (APIData.data.items[i].event_type== "birth")
-                        {
-                            item.SubItems.Add("出生");
-                        }
-                        else
-                        {
-                            item.SubItems.Add("未知");
-                        }
+                    for (int i = 0; i < APIData.data.Length; i++)
+                    {
+                        ListViewItem item = new ListViewItem($"{APIData.data[i].title}");
+
+                        item.SubItems.Add($"{APIData.data[i].hot_value}");
+                        item.SubItems.Add($"{APIData.data[i].event_time}");
+                        item.SubItems.Add($"{APIData.data[i].link}");
 
                         listView_main.Items.Add(item);
                     }
@@ -86,9 +68,16 @@ namespace Quick60s.apiForms
                 {
                     MessageBox.Show($"发生API内部错误!\n\n错误代码: {APIData.code}\n错误信息: {APIData.message}", "API内部错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
+
+
+                    button_Refresh.Enabled = true;
+                listView_main.Enabled = true;
             }
             catch (Exception ex)
             {
+                button_Refresh.Enabled = true;
+                listView_main.Enabled = true;
                 MessageBox.Show($"在获取API数据时发生错误!\n\n错误原因:\n{ex}", "发生错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -97,12 +86,19 @@ namespace Quick60s.apiForms
 
 
 
-        public HistoryToday()
+
+
+
+
+
+
+
+        public DoyinHot()
         {
             InitializeComponent();
         }
 
-        private void HistoryToday_Load(object sender, EventArgs e)
+        private void DoyinHot_Load(object sender, EventArgs e)
         {
             RefreshAPI();
         }
@@ -111,7 +107,10 @@ namespace Quick60s.apiForms
         {
             if (listView_main.SelectedItems.Count > 0)
             {
-                MessageBox.Show($"{APIData.data.items[listView_main.SelectedIndices[0]].title}\n\n{APIData.data.items[listView_main.SelectedIndices[0]].description}", "详细信息", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (MessageBox.Show($"{APIData.data[listView_main.SelectedIndices[0]].title}\n\n热度: {APIData.data[listView_main.SelectedIndices[0]].hot_value}\n\n链接: {APIData.data[listView_main.SelectedIndices[0]].link}\n\n点击\"是\"选项，跳转链接\n点击\"否\"留在此界面", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) 
+                {
+                    Process.Start($"{APIData.data[listView_main.SelectedIndices[0]].link}");
+                }
             }
         }
 

@@ -33,6 +33,7 @@ namespace Quick60s
         public static string ConfigPath = $"{RunPath}\\config.json";
         public static string TempPath = $"{Path.GetTempPath()}apitemp.json";
         public static string APIRootUrl = "https://60s.viki.moe";
+        public static string Version = "Beta 1.0.0.0";
 
         //public static JsonConfig.Config.Root GlobalConfig;
 
@@ -43,6 +44,7 @@ namespace Quick60s
             public static readonly string bingWallpaper = $"{APIRootUrl}/v2/bing";
             public static readonly string exchangeRate = $"{APIRootUrl}/v2/exchange_rate";
             public static readonly string historyToday = $"{APIRootUrl}/v2/today_in_history";
+            public static readonly string doyinHot = $"{APIRootUrl}/v2/douyin";
         }
         //事件========================================================================================
         public Main_Window()
@@ -87,6 +89,14 @@ namespace Quick60s
         private void button_HistoryToday_Go_Click(object sender, EventArgs e)
         {
             using (HistoryToday window = new HistoryToday())
+            {
+                window.ShowDialog();
+            }
+        }
+
+        private void button_DoyinHot_Go_Click(object sender, EventArgs e)
+        {
+            using (DoyinHot window = new DoyinHot())
             {
                 window.ShowDialog();
             }

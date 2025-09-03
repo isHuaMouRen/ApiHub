@@ -121,6 +121,12 @@
     <Compile Include="apiForms\bingWallpaper.Designer.cs">
       <DependentUpon>bingWallpaper.cs</DependentUpon>
     </Compile>
+    <Compile Include="apiForms\DoyinHot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="apiForms\DoyinHot.Designer.cs">
+      <DependentUpon>DoyinHot.cs</DependentUpon>
+    </Compile>
     <Compile Include="apiForms\ExchangeRate.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="apiForms\bingWallpaper.resx">
       <DependentUpon>bingWallpaper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="apiForms\DoyinHot.resx">
+      <DependentUpon>DoyinHot.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="apiForms\ExchangeRate.resx">
       <DependentUpon>ExchangeRate.cs</DependentUpon>

@@ -45,24 +45,30 @@
             this.button_HistoryToday_Go = new System.Windows.Forms.Button();
             this.label_HistoryToday_Subtitle = new System.Windows.Forms.Label();
             this.label_HistoryToday_Title = new System.Windows.Forms.Label();
+            this.panel_DoyinHot = new System.Windows.Forms.Panel();
+            this.button_DoyinHot_Go = new System.Windows.Forms.Button();
+            this.label_DoyinHot_Subtitle = new System.Windows.Forms.Label();
+            this.label_DoyinHot_Title = new System.Windows.Forms.Label();
             this.panel_main.SuspendLayout();
             this.panel_BingWallpaper.SuspendLayout();
             this.panel_60sReadWorld.SuspendLayout();
             this.panel_ExchangeRate.SuspendLayout();
             this.panel_HistoryToday.SuspendLayout();
+            this.panel_DoyinHot.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_main
             // 
             this.panel_main.AutoScroll = true;
             this.panel_main.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_main.Controls.Add(this.panel_DoyinHot);
             this.panel_main.Controls.Add(this.panel_HistoryToday);
             this.panel_main.Controls.Add(this.panel_ExchangeRate);
             this.panel_main.Controls.Add(this.panel_BingWallpaper);
             this.panel_main.Controls.Add(this.panel_60sReadWorld);
             this.panel_main.Location = new System.Drawing.Point(12, 12);
             this.panel_main.Name = "panel_main";
-            this.panel_main.Size = new System.Drawing.Size(760, 337);
+            this.panel_main.Size = new System.Drawing.Size(780, 357);
             this.panel_main.TabIndex = 1;
             // 
             // panel_BingWallpaper
@@ -225,11 +231,51 @@
             this.label_HistoryToday_Title.Text = "[日更] 历史上的今天";
             this.label_HistoryToday_Title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // panel_DoyinHot
+            // 
+            this.panel_DoyinHot.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_DoyinHot.Controls.Add(this.button_DoyinHot_Go);
+            this.panel_DoyinHot.Controls.Add(this.label_DoyinHot_Subtitle);
+            this.panel_DoyinHot.Controls.Add(this.label_DoyinHot_Title);
+            this.panel_DoyinHot.Location = new System.Drawing.Point(3, 235);
+            this.panel_DoyinHot.Name = "panel_DoyinHot";
+            this.panel_DoyinHot.Size = new System.Drawing.Size(375, 110);
+            this.panel_DoyinHot.TabIndex = 4;
+            // 
+            // button_DoyinHot_Go
+            // 
+            this.button_DoyinHot_Go.Location = new System.Drawing.Point(7, 73);
+            this.button_DoyinHot_Go.Name = "button_DoyinHot_Go";
+            this.button_DoyinHot_Go.Size = new System.Drawing.Size(363, 32);
+            this.button_DoyinHot_Go.TabIndex = 2;
+            this.button_DoyinHot_Go.Text = "前往";
+            this.button_DoyinHot_Go.UseVisualStyleBackColor = true;
+            this.button_DoyinHot_Go.Click += new System.EventHandler(this.button_DoyinHot_Go_Click);
+            // 
+            // label_DoyinHot_Subtitle
+            // 
+            this.label_DoyinHot_Subtitle.Location = new System.Drawing.Point(4, 30);
+            this.label_DoyinHot_Subtitle.Name = "label_DoyinHot_Subtitle";
+            this.label_DoyinHot_Subtitle.Size = new System.Drawing.Size(137, 40);
+            this.label_DoyinHot_Subtitle.TabIndex = 1;
+            this.label_DoyinHot_Subtitle.Text = "抖音热门内容\t";
+            this.label_DoyinHot_Subtitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label_DoyinHot_Title
+            // 
+            this.label_DoyinHot_Title.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_DoyinHot_Title.Location = new System.Drawing.Point(3, 6);
+            this.label_DoyinHot_Title.Name = "label_DoyinHot_Title";
+            this.label_DoyinHot_Title.Size = new System.Drawing.Size(287, 20);
+            this.label_DoyinHot_Title.TabIndex = 0;
+            this.label_DoyinHot_Title.Text = "[实时] 抖音热搜榜";
+            this.label_DoyinHot_Title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // Main_Window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 361);
+            this.ClientSize = new System.Drawing.Size(804, 381);
             this.Controls.Add(this.panel_main);
             this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -243,6 +289,7 @@
             this.panel_60sReadWorld.ResumeLayout(false);
             this.panel_ExchangeRate.ResumeLayout(false);
             this.panel_HistoryToday.ResumeLayout(false);
+            this.panel_DoyinHot.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -265,6 +312,10 @@
         private System.Windows.Forms.Button button_HistoryToday_Go;
         private System.Windows.Forms.Label label_HistoryToday_Subtitle;
         private System.Windows.Forms.Label label_HistoryToday_Title;
+        private System.Windows.Forms.Panel panel_DoyinHot;
+        private System.Windows.Forms.Button button_DoyinHot_Go;
+        private System.Windows.Forms.Label label_DoyinHot_Subtitle;
+        private System.Windows.Forms.Label label_DoyinHot_Title;
     }
 }
 
