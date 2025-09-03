@@ -139,6 +139,12 @@
     <Compile Include="apiForms\HistoryToday.Designer.cs">
       <DependentUpon>HistoryToday.cs</DependentUpon>
     </Compile>
+    <Compile Include="apiForms\RednoteHot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="apiForms\RednoteHot.Designer.cs">
+      <DependentUpon>RednoteHot.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main_Window.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
     <Compile Include="utils\Functions.cs" />
     <EmbeddedResource Include="apiForms\60sReadWorld.resx">
       <DependentUpon>60sReadWorld.cs</DependentUpon>
@@ -163,6 +175,9 @@
     <EmbeddedResource Include="apiForms\HistoryToday.resx">
       <DependentUpon>HistoryToday.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="apiForms\RednoteHot.resx">
+      <DependentUpon>RednoteHot.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main_Window.resx">
       <DependentUpon>Main_Window.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,6 +190,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

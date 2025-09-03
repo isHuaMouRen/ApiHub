@@ -1,6 +1,6 @@
 ﻿namespace Quick60s.apiForms
 {
-    partial class DoyinHot
+    partial class RednoteHot
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
             "正在获取...",
             "正在获取...",
             "正在获取...",
@@ -38,10 +38,10 @@
             this.button_Refresh = new System.Windows.Forms.Button();
             this.listView_main = new System.Windows.Forms.ListView();
             this.columnHeader_title = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader_hotValue = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader_time = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader_rank = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader_score = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader_link = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label_tip = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label_Title
@@ -49,9 +49,9 @@
             this.label_Title.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label_Title.Location = new System.Drawing.Point(12, 9);
             this.label_Title.Name = "label_Title";
-            this.label_Title.Size = new System.Drawing.Size(302, 40);
+            this.label_Title.Size = new System.Drawing.Size(214, 40);
             this.label_Title.TabIndex = 0;
-            this.label_Title.Text = "[实时] 抖音热搜榜";
+            this.label_Title.Text = "[实时] 小红书热点";
             this.label_Title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label_Subtitle
@@ -59,16 +59,16 @@
             this.label_Subtitle.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label_Subtitle.Location = new System.Drawing.Point(13, 49);
             this.label_Subtitle.Name = "label_Subtitle";
-            this.label_Subtitle.Size = new System.Drawing.Size(302, 20);
+            this.label_Subtitle.Size = new System.Drawing.Size(214, 20);
             this.label_Subtitle.TabIndex = 1;
-            this.label_Subtitle.Text = "抖音热门内容";
+            this.label_Subtitle.Text = "小红书热门话题\t";
             this.label_Subtitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // button_Refresh
             // 
-            this.button_Refresh.Location = new System.Drawing.Point(623, 9);
+            this.button_Refresh.Location = new System.Drawing.Point(620, 9);
             this.button_Refresh.Name = "button_Refresh";
-            this.button_Refresh.Size = new System.Drawing.Size(130, 28);
+            this.button_Refresh.Size = new System.Drawing.Size(102, 27);
             this.button_Refresh.TabIndex = 2;
             this.button_Refresh.Text = "刷新";
             this.button_Refresh.UseVisualStyleBackColor = true;
@@ -78,15 +78,15 @@
             // 
             this.listView_main.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader_title,
-            this.columnHeader_hotValue,
-            this.columnHeader_time,
+            this.columnHeader_rank,
+            this.columnHeader_score,
             this.columnHeader_link});
             this.listView_main.HideSelection = false;
             this.listView_main.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
-            this.listView_main.Location = new System.Drawing.Point(12, 72);
+            listViewItem2});
+            this.listView_main.Location = new System.Drawing.Point(17, 72);
             this.listView_main.Name = "listView_main";
-            this.listView_main.Size = new System.Drawing.Size(741, 240);
+            this.listView_main.Size = new System.Drawing.Size(705, 250);
             this.listView_main.TabIndex = 3;
             this.listView_main.UseCompatibleStateImageBehavior = false;
             this.listView_main.View = System.Windows.Forms.View.Details;
@@ -95,53 +95,53 @@
             // columnHeader_title
             // 
             this.columnHeader_title.Text = "标题";
-            this.columnHeader_title.Width = 245;
+            this.columnHeader_title.Width = 216;
             // 
-            // columnHeader_hotValue
+            // columnHeader_rank
             // 
-            this.columnHeader_hotValue.Text = "热度";
-            this.columnHeader_hotValue.Width = 82;
+            this.columnHeader_rank.Text = "排名";
+            this.columnHeader_rank.Width = 73;
             // 
-            // columnHeader_time
+            // columnHeader_score
             // 
-            this.columnHeader_time.Text = "时间";
-            this.columnHeader_time.Width = 165;
+            this.columnHeader_score.Text = "热度";
+            this.columnHeader_score.Width = 74;
             // 
             // columnHeader_link
             // 
             this.columnHeader_link.Text = "链接";
-            this.columnHeader_link.Width = 210;
+            this.columnHeader_link.Width = 306;
             // 
-            // label_tip
+            // label1
             // 
-            this.label_tip.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_tip.Location = new System.Drawing.Point(451, 49);
-            this.label_tip.Name = "label_tip";
-            this.label_tip.Size = new System.Drawing.Size(302, 20);
-            this.label_tip.TabIndex = 4;
-            this.label_tip.Text = "双击跳转搜索页面";
-            this.label_tip.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label1.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(508, 49);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(214, 20);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "双击查看详细信息";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // DoyinHot
+            // RednoteHot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(765, 324);
-            this.Controls.Add(this.label_tip);
+            this.ClientSize = new System.Drawing.Size(734, 334);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.listView_main);
             this.Controls.Add(this.button_Refresh);
             this.Controls.Add(this.label_Subtitle);
             this.Controls.Add(this.label_Title);
             this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "DoyinHot";
+            this.Name = "RednoteHot";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "抖音热搜榜";
-            this.Load += new System.EventHandler(this.DoyinHot_Load);
+            this.Text = "小红书热点";
+            this.Load += new System.EventHandler(this.RednoteHot_Load);
             this.ResumeLayout(false);
 
         }
@@ -153,9 +153,9 @@
         private System.Windows.Forms.Button button_Refresh;
         private System.Windows.Forms.ListView listView_main;
         private System.Windows.Forms.ColumnHeader columnHeader_title;
-        private System.Windows.Forms.ColumnHeader columnHeader_hotValue;
-        private System.Windows.Forms.ColumnHeader columnHeader_time;
+        private System.Windows.Forms.ColumnHeader columnHeader_rank;
+        private System.Windows.Forms.ColumnHeader columnHeader_score;
         private System.Windows.Forms.ColumnHeader columnHeader_link;
-        private System.Windows.Forms.Label label_tip;
+        private System.Windows.Forms.Label label1;
     }
 }

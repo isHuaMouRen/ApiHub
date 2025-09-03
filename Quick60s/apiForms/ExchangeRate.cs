@@ -53,7 +53,7 @@ namespace Quick60s.apiForms
                 using (HttpClient client = new HttpClient())
                 {
                     File.WriteAllText(Main_Window.TempPath, await client.GetStringAsync(Main_Window.APIURL.exchangeRate));
-                    APIData = ReadJson<API.Root>(Main_Window.TempPath);
+                    APIData = ReadJson<API.Root>(Main_Window.TempPath); 
                 }
 
                 if (APIData.code == 200)
