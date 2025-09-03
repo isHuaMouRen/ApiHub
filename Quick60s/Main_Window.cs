@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Funcitons;
 using static Funcitons.NormalFunc;
+using System.Diagnostics;
 
 namespace Quick60s
 {
@@ -100,6 +101,21 @@ namespace Quick60s
             {
                 window.ShowDialog();
             }
+        }
+
+        private void 关于程序ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show($"Quick60s 快速查看60sAPI内容！\n\n版本: {Version}\n\n程序基于C# Winform .NET Framework 4.8\nAPI由60s API提供", "关于程序", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void 项目仓库ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://github.com/isHuaMouRen/Quick60s");
+        }
+
+        private void aPI仓库ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://github.com/vikiboss/60s");
         }
     }
 }

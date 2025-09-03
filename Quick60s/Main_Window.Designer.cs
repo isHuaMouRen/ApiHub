@@ -49,12 +49,18 @@
             this.button_DoyinHot_Go = new System.Windows.Forms.Button();
             this.label_DoyinHot_Subtitle = new System.Windows.Forms.Label();
             this.label_DoyinHot_Title = new System.Windows.Forms.Label();
+            this.menuStrip = new System.Windows.Forms.MenuStrip();
+            this.关于ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.关于程序ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.项目仓库ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aPI仓库ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel_main.SuspendLayout();
             this.panel_BingWallpaper.SuspendLayout();
             this.panel_60sReadWorld.SuspendLayout();
             this.panel_ExchangeRate.SuspendLayout();
             this.panel_HistoryToday.SuspendLayout();
             this.panel_DoyinHot.SuspendLayout();
+            this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_main
@@ -66,7 +72,7 @@
             this.panel_main.Controls.Add(this.panel_ExchangeRate);
             this.panel_main.Controls.Add(this.panel_BingWallpaper);
             this.panel_main.Controls.Add(this.panel_60sReadWorld);
-            this.panel_main.Location = new System.Drawing.Point(12, 12);
+            this.panel_main.Location = new System.Drawing.Point(12, 27);
             this.panel_main.Name = "panel_main";
             this.panel_main.Size = new System.Drawing.Size(780, 357);
             this.panel_main.TabIndex = 1;
@@ -271,14 +277,56 @@
             this.label_DoyinHot_Title.Text = "[实时] 抖音热搜榜";
             this.label_DoyinHot_Title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // menuStrip
+            // 
+            this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.关于ToolStripMenuItem});
+            this.menuStrip.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip.Name = "menuStrip";
+            this.menuStrip.Size = new System.Drawing.Size(804, 25);
+            this.menuStrip.TabIndex = 2;
+            // 
+            // 关于ToolStripMenuItem
+            // 
+            this.关于ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.关于程序ToolStripMenuItem,
+            this.项目仓库ToolStripMenuItem,
+            this.aPI仓库ToolStripMenuItem});
+            this.关于ToolStripMenuItem.Name = "关于ToolStripMenuItem";
+            this.关于ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.关于ToolStripMenuItem.Text = "关于";
+            // 
+            // 关于程序ToolStripMenuItem
+            // 
+            this.关于程序ToolStripMenuItem.Name = "关于程序ToolStripMenuItem";
+            this.关于程序ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.关于程序ToolStripMenuItem.Text = "关于程序";
+            this.关于程序ToolStripMenuItem.Click += new System.EventHandler(this.关于程序ToolStripMenuItem_Click);
+            // 
+            // 项目仓库ToolStripMenuItem
+            // 
+            this.项目仓库ToolStripMenuItem.Name = "项目仓库ToolStripMenuItem";
+            this.项目仓库ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.项目仓库ToolStripMenuItem.Text = "项目仓库*";
+            this.项目仓库ToolStripMenuItem.Click += new System.EventHandler(this.项目仓库ToolStripMenuItem_Click);
+            // 
+            // aPI仓库ToolStripMenuItem
+            // 
+            this.aPI仓库ToolStripMenuItem.Name = "aPI仓库ToolStripMenuItem";
+            this.aPI仓库ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aPI仓库ToolStripMenuItem.Text = "API仓库*";
+            this.aPI仓库ToolStripMenuItem.Click += new System.EventHandler(this.aPI仓库ToolStripMenuItem_Click);
+            // 
             // Main_Window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(804, 381);
+            this.ClientSize = new System.Drawing.Size(804, 395);
             this.Controls.Add(this.panel_main);
+            this.Controls.Add(this.menuStrip);
             this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MainMenuStrip = this.menuStrip;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Main_Window";
@@ -290,7 +338,10 @@
             this.panel_ExchangeRate.ResumeLayout(false);
             this.panel_HistoryToday.ResumeLayout(false);
             this.panel_DoyinHot.ResumeLayout(false);
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -316,6 +367,11 @@
         private System.Windows.Forms.Button button_DoyinHot_Go;
         private System.Windows.Forms.Label label_DoyinHot_Subtitle;
         private System.Windows.Forms.Label label_DoyinHot_Title;
+        private System.Windows.Forms.MenuStrip menuStrip;
+        private System.Windows.Forms.ToolStripMenuItem 关于ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 关于程序ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 项目仓库ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aPI仓库ToolStripMenuItem;
     }
 }
 
