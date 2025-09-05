@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Funcitons.NormalFunc;
 
-namespace Quick60s.apiForms
+namespace ApiHub.apiForms
 {
     public partial class HistoryToday : Form
     {
@@ -118,6 +118,11 @@ namespace Quick60s.apiForms
         private void button_Refresh_Click(object sender, EventArgs e)
         {
             RefreshAPI();
+        }
+
+        private void HistoryToday_Resize(object sender, EventArgs e)
+        {
+            listView_main.Size = new Size(this.Width - 46, this.Height - 146);
         }
     }
 }

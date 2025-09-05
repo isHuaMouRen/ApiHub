@@ -1,4 +1,4 @@
-﻿using Quick60s.apiForms;
+﻿using ApiHub.apiForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +13,7 @@ using Funcitons;
 using static Funcitons.NormalFunc;
 using System.Diagnostics;
 
-namespace Quick60s
+namespace ApiHub
 {
     public partial class Main_Window : Form
     {
@@ -34,7 +34,7 @@ namespace Quick60s
         public static string ConfigPath = $"{RunPath}\\config.json";
         public static string TempPath = $"{Path.GetTempPath()}apitemp.json";
         public static string RootUrl = "https://60s.viki.moe";
-        public static string Version = "Beta 1.1.2.4";
+        public static string Version = "Beta 1.2.2.9";
         public static string BuildDate = "2025-9-3 15:12";
 
         public static JsonConfig.Config.Root GlobalConfig;
@@ -58,6 +58,10 @@ namespace Quick60s
             public static string historyToday;
             public static string doyinHot;
             public static string rednoteHot;
+            public static string biliHot;
+            public static string weiboHot;
+            public static string toutiaoHot;
+            public static string zhihuHot;
         }
 
 
@@ -115,6 +119,10 @@ namespace Quick60s
             APIURL.historyToday = $"{RootUrl}/v2/today_in_history";
             APIURL.doyinHot = $"{RootUrl}/v2/douyin";
             APIURL.rednoteHot = $"{RootUrl}/v2/rednote";
+            APIURL.biliHot = $"{RootUrl}/v2/bili";
+            APIURL.weiboHot = $"{RootUrl}/v2/weibo";
+            APIURL.toutiaoHot = $"{RootUrl}/v2/toutiao";
+            APIURL.zhihuHot = $"{RootUrl}/v2/zhihu";
         }
 
         private void button_60sReadWorld_Go_Click(object sender, EventArgs e)
@@ -159,12 +167,12 @@ namespace Quick60s
 
         private void 关于程序ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"Quick60s 快速查看60sAPI内容！\n\n版本: {Version}\n构建时间: {BuildDate}\n\n程序基于C# Winform .NET Framework 4.8\nAPI由60s API提供", "关于程序", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show($"ApiHub 快速查看60sAPI内容！\n\n版本: {Version}\n构建时间: {BuildDate}\n\n程序基于C# Winform .NET Framework 4.8\nAPI由60s API提供", "关于程序", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void 项目仓库ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Process.Start("https://github.com/isHuaMouRen/Quick60s");
+            Process.Start("https://github.com/isHuaMouRen/ApiHub");
         }
 
         private void aPI仓库ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -183,6 +191,38 @@ namespace Quick60s
         private void button_RednoteHot_Go_Click(object sender, EventArgs e)
         {
             using (RednoteHot window = new RednoteHot())
+            {
+                window.ShowDialog();
+            }
+        }
+
+        private void button_BiliHot_Go_Click(object sender, EventArgs e)
+        {
+            using (BiliHot window = new BiliHot())
+            {
+                window.ShowDialog();
+            }
+        }
+
+        private void button_WeiboHot_Go_Click(object sender, EventArgs e)
+        {
+            using (WeiboHot window = new WeiboHot())
+            {
+                window.ShowDialog();
+            }
+        }
+
+        private void button_ToutiaoHot_Go_Click(object sender, EventArgs e)
+        {
+            using (ToutiaoHot window = new ToutiaoHot())
+            {
+                window.ShowDialog();
+            }
+        }
+
+        private void button_ZhihuHot_Go_Click(object sender, EventArgs e)
+        {
+            using (ZhihuHot window = new ZhihuHot())
             {
                 window.ShowDialog();
             }

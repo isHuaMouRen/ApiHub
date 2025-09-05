@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Funcitons.NormalFunc;
 
-namespace Quick60s.apiForms
+namespace ApiHub.apiForms
 {
     public partial class bingWallpaper : Form
     {

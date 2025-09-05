@@ -1,4 +1,4 @@
-﻿namespace Quick60s.apiForms
+﻿namespace ApiHub.apiForms
 {
     partial class bingWallpaper
     {

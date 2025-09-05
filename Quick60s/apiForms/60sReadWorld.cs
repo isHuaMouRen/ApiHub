@@ -12,7 +12,7 @@ using System.Windows.Forms;
 using Funcitons;
 using static Funcitons.NormalFunc;
 
-namespace Quick60s.apiForms
+namespace ApiHub.apiForms
 {
     public partial class _60sReadWorld : Form
     {
@@ -102,6 +102,18 @@ namespace Quick60s.apiForms
         private void button_Refresh_Click(object sender, EventArgs e)
         {
             RefreshAPI();
+        }
+
+        private void _60sReadWorld_Resize(object sender, EventArgs e)
+        {
+            button_Refresh.Left = this.Width - 135;
+            label_tip.Top = this.Height - 100;
+            label_tip.Width = this.Width - 40;
+
+            label_update.Top = this.Height - 70;
+            label_update.Width = this.Width - 40;
+
+            textBox_Content.Size = new Size(this.Width - 40, this.Height - 189);
         }
     }
 }

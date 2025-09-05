@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{9CF06199-E9BA-4868-8014-C33BC87A1923}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Quick60s</RootNamespace>
-    <AssemblyName>Quick60s</AssemblyName>
+    <RootNamespace>ApiHub</RootNamespace>
+    <AssemblyName>ApiHub</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -115,6 +115,24 @@
     <Compile Include="apiForms\60sReadWorld.Designer.cs">
       <DependentUpon>60sReadWorld.cs</DependentUpon>
     </Compile>
+    <Compile Include="apiForms\Toutiaohot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="apiForms\Toutiaohot.Designer.cs">
+      <DependentUpon>Toutiaohot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="apiForms\WeiboHot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="apiForms\WeiboHot.Designer.cs">
+      <DependentUpon>WeiboHot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="apiForms\BiliHot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="apiForms\BiliHot.Designer.cs">
+      <DependentUpon>BiliHot.cs</DependentUpon>
+    </Compile>
     <Compile Include="apiForms\bingWallpaper.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +163,12 @@
     <Compile Include="apiForms\RednoteHot.Designer.cs">
       <DependentUpon>RednoteHot.cs</DependentUpon>
     </Compile>
+    <Compile Include="apiForms\ZhihuHot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="apiForms\ZhihuHot.Designer.cs">
+      <DependentUpon>ZhihuHot.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main_Window.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,6 +187,15 @@
     <EmbeddedResource Include="apiForms\60sReadWorld.resx">
       <DependentUpon>60sReadWorld.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="apiForms\Toutiaohot.resx">
+      <DependentUpon>Toutiaohot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="apiForms\WeiboHot.resx">
+      <DependentUpon>WeiboHot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="apiForms\BiliHot.resx">
+      <DependentUpon>BiliHot.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="apiForms\bingWallpaper.resx">
       <DependentUpon>bingWallpaper.cs</DependentUpon>
     </EmbeddedResource>
@@ -178,6 +211,9 @@
     <EmbeddedResource Include="apiForms\RednoteHot.resx">
       <DependentUpon>RednoteHot.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="apiForms\ZhihuHot.resx">
+      <DependentUpon>ZhihuHot.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main_Window.resx">
       <DependentUpon>Main_Window.cs</DependentUpon>
     </EmbeddedResource>
@@ -189,6 +225,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>

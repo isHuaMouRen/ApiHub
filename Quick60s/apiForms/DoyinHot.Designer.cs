@@ -1,4 +1,4 @@
-﻿namespace Quick60s.apiForms
+﻿namespace ApiHub.apiForms
 {
     partial class DoyinHot
     {
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
             "正在获取...",
             "正在获取...",
             "正在获取...",
@@ -83,7 +83,7 @@
             this.columnHeader_link});
             this.listView_main.HideSelection = false;
             this.listView_main.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
+            listViewItem3});
             this.listView_main.Location = new System.Drawing.Point(12, 72);
             this.listView_main.Name = "listView_main";
             this.listView_main.Size = new System.Drawing.Size(741, 240);
@@ -133,15 +133,16 @@
             this.Controls.Add(this.label_Subtitle);
             this.Controls.Add(this.label_Title);
             this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(781, 363);
             this.Name = "DoyinHot";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "抖音热搜榜";
             this.Load += new System.EventHandler(this.DoyinHot_Load);
+            this.Resize += new System.EventHandler(this.DoyinHot_Resize);
             this.ResumeLayout(false);
 
         }

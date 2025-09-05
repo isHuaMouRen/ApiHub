@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Funcitons.NormalFunc;
 
-namespace Quick60s.apiForms
+namespace ApiHub.apiForms
 {
     public partial class DoyinHot : Form
     {
@@ -117,6 +117,13 @@ namespace Quick60s.apiForms
         private void button_Refresh_Click(object sender, EventArgs e)
         {
             RefreshAPI();
+        }
+
+        private void DoyinHot_Resize(object sender, EventArgs e)
+        {
+            listView_main.Size = new Size(this.Width - 40, this.Height - 123);
+            button_Refresh.Left = this.Width - 158;
+            label_tip.Left = this.Width - 330;
         }
     }
 }

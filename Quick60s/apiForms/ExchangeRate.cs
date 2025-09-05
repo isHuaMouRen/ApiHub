@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Funcitons.NormalFunc;
 
-namespace Quick60s.apiForms
+namespace ApiHub.apiForms
 {
     public partial class ExchangeRate : Form
     {
@@ -141,6 +141,19 @@ namespace Quick60s.apiForms
         private void button_Refresh_Click(object sender, EventArgs e)
         {
             RefreshAPI();
+        }
+
+        private void ExchangeRate_Resize(object sender, EventArgs e)
+        {
+            listView_main.Size = new Size(this.Width - 44, this.Height - 154);
+            button_Refresh.Left = this.Width - 142;
+            linkLabel_GoWebside.Left = this.Width - 116;
+
+            textBox_Search.Top = this.Height - 76;
+            button_Search.Top = this.Height - 76;
+
+            button_Search.Left = this.Width - 103;
+            textBox_Search.Width = this.Width - 125;
         }
     }
 }

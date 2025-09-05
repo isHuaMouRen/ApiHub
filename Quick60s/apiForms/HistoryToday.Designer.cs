@@ -1,4 +1,4 @@
-﻿namespace Quick60s.apiForms
+﻿namespace ApiHub.apiForms
 {
     partial class HistoryToday
     {
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
             "正在获取...",
             "正在获取...",
             "正在获取...",
@@ -76,7 +76,7 @@
             this.columnHeader_type});
             this.listView_main.HideSelection = false;
             this.listView_main.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
+            listViewItem3});
             this.listView_main.Location = new System.Drawing.Point(18, 72);
             this.listView_main.Name = "listView_main";
             this.listView_main.Size = new System.Drawing.Size(868, 297);
@@ -107,6 +107,7 @@
             // 
             // label_Date
             // 
+            this.label_Date.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label_Date.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label_Date.Location = new System.Drawing.Point(604, 49);
             this.label_Date.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -118,6 +119,7 @@
             // 
             // label_tip
             // 
+            this.label_tip.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label_tip.Font = new System.Drawing.Font("微软雅黑", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label_tip.Location = new System.Drawing.Point(14, 372);
             this.label_tip.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -129,6 +131,7 @@
             // 
             // button_Refresh
             // 
+            this.button_Refresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button_Refresh.Location = new System.Drawing.Point(756, 9);
             this.button_Refresh.Name = "button_Refresh";
             this.button_Refresh.Size = new System.Drawing.Size(130, 37);
@@ -149,15 +152,16 @@
             this.Controls.Add(this.label_Subtitle);
             this.Controls.Add(this.label_Title);
             this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(914, 443);
             this.Name = "HistoryToday";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "历史上的今天";
             this.Load += new System.EventHandler(this.HistoryToday_Load);
+            this.Resize += new System.EventHandler(this.HistoryToday_Resize);
             this.ResumeLayout(false);
 
         }

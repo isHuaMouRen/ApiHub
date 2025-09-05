@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Funcitons.NormalFunc;
 
-namespace Quick60s
+namespace ApiHub
 {
     public partial class Settings : Form
     {

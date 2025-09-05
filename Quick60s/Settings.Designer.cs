@@ -1,4 +1,4 @@
-﻿namespace Quick60s
+﻿namespace ApiHub
 {
     partial class Settings
     {

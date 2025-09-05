@@ -1,4 +1,4 @@
-﻿namespace Quick60s.apiForms
+﻿namespace ApiHub.apiForms
 {
     partial class ExchangeRate
     {
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
             "正在获取...",
             "正在获取..."}, -1);
             this.label_Title = new System.Windows.Forms.Label();
@@ -69,7 +69,7 @@
             this.columnHeader_rate});
             this.listView_main.HideSelection = false;
             this.listView_main.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1});
+            listViewItem3});
             this.listView_main.Location = new System.Drawing.Point(16, 72);
             this.listView_main.Name = "listView_main";
             this.listView_main.Size = new System.Drawing.Size(458, 231);
@@ -139,15 +139,16 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label_Title);
             this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(502, 385);
             this.Name = "ExchangeRate";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "货币汇率";
             this.Load += new System.EventHandler(this.ExchangeRate_Load);
+            this.Resize += new System.EventHandler(this.ExchangeRate_Resize);
             this.ResumeLayout(false);
             this.PerformLayout();
 

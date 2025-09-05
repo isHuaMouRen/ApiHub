@@ -1,4 +1,4 @@
-﻿namespace Quick60s.apiForms
+﻿namespace ApiHub.apiForms
 {
     partial class _60sReadWorld
     {
@@ -122,15 +122,16 @@
             this.Controls.Add(this.label_Subtitle);
             this.Controls.Add(this.label_Title);
             this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(595, 461);
             this.Name = "_60sReadWorld";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "60秒读懂世界";
             this.Load += new System.EventHandler(this._60sReadWorld_Load);
+            this.Resize += new System.EventHandler(this._60sReadWorld_Resize);
             this.ResumeLayout(false);
             this.PerformLayout();
 
