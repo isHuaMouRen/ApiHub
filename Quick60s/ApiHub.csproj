@@ -115,6 +115,18 @@
     <Compile Include="apiForms\60sReadWorld.Designer.cs">
       <DependentUpon>60sReadWorld.cs</DependentUpon>
     </Compile>
+    <Compile Include="apiForms\BaiduHot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="apiForms\BaiduHot.Designer.cs">
+      <DependentUpon>BaiduHot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="apiForms\BaiduTvHot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="apiForms\BaiduTvHot.Designer.cs">
+      <DependentUpon>BaiduTvHot.cs</DependentUpon>
+    </Compile>
     <Compile Include="apiForms\Toutiaohot.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +198,12 @@
     <Compile Include="utils\Functions.cs" />
     <EmbeddedResource Include="apiForms\60sReadWorld.resx">
       <DependentUpon>60sReadWorld.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="apiForms\BaiduHot.resx">
+      <DependentUpon>BaiduHot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="apiForms\BaiduTvHot.resx">
+      <DependentUpon>BaiduTvHot.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="apiForms\Toutiaohot.resx">
       <DependentUpon>Toutiaohot.cs</DependentUpon>

@@ -34,8 +34,7 @@ namespace ApiHub
         public static string ConfigPath = $"{RunPath}\\config.json";
         public static string TempPath = $"{Path.GetTempPath()}apitemp.json";
         public static string RootUrl = "https://60s.viki.moe";
-        public static string Version = "Beta 1.2.2.9";
-        public static string BuildDate = "2025-9-3 15:12";
+        public static string Version = "Beta 1.3.4.10";
 
         public static JsonConfig.Config.Root GlobalConfig;
 
@@ -62,6 +61,8 @@ namespace ApiHub
             public static string weiboHot;
             public static string toutiaoHot;
             public static string zhihuHot;
+            public static string baiduHot;
+            public static string baiduTvHot;
         }
 
 
@@ -123,51 +124,13 @@ namespace ApiHub
             APIURL.weiboHot = $"{RootUrl}/v2/weibo";
             APIURL.toutiaoHot = $"{RootUrl}/v2/toutiao";
             APIURL.zhihuHot = $"{RootUrl}/v2/zhihu";
-        }
-
-        private void button_60sReadWorld_Go_Click(object sender, EventArgs e)
-        {
-            using (_60sReadWorld window = new _60sReadWorld())
-            {
-                window.ShowDialog();
-            }
-        }
-
-        private void button_BingWallpaper_Go_Click(object sender, EventArgs e)
-        {
-            using (bingWallpaper window = new bingWallpaper())
-            {
-                window.ShowDialog();
-            }
-        }
-
-        private void button_ExchangeRate_Click(object sender, EventArgs e)
-        {
-            using (ExchangeRate window = new ExchangeRate())
-            {
-                window.ShowDialog();
-            }
-        }
-
-        private void button_HistoryToday_Go_Click(object sender, EventArgs e)
-        {
-            using (HistoryToday window = new HistoryToday())
-            {
-                window.ShowDialog();
-            }
-        }
-
-        private void button_DoyinHot_Go_Click(object sender, EventArgs e)
-        {
-            using (DoyinHot window = new DoyinHot())
-            {
-                window.ShowDialog();
-            }
+            APIURL.baiduHot = $"{RootUrl}/v2/baidu/realtime";
+            APIURL.baiduTvHot = $"{RootUrl}/v2/baidu/teleplay";
         }
 
         private void 关于程序ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"ApiHub 快速查看60sAPI内容！\n\n版本: {Version}\n构建时间: {BuildDate}\n\n程序基于C# Winform .NET Framework 4.8\nAPI由60s API提供", "关于程序", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show($"ApiHub 快速查看60sAPI内容！\n\n版本: {Version}\n\n程序基于C# Winform .NET Framework 4.8\nAPI由60s API提供", "关于程序", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void 项目仓库ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -188,44 +151,76 @@ namespace ApiHub
             }
         }
 
-        private void button_RednoteHot_Go_Click(object sender, EventArgs e)
+        public void ApiButton_Click(object sender, EventArgs e)
         {
-            using (RednoteHot window = new RednoteHot())
+            Button btn = sender as Button;
+            if (btn == null) return;
+
+            string tagName = $"{btn.Tag}";
+
+            Form window = null;
+
+            if (tagName == "60sReadWorld")
             {
-                window.ShowDialog();
+                window = new _60sReadWorld();
             }
+            else if (tagName == "BingWallpaper")
+            {
+                window = new bingWallpaper();
+            }
+            else if (tagName == "ExchangeRate")
+            {
+                window = new ExchangeRate();
+            }
+            else if (tagName == "HistoryToday")
+            {
+                window = new HistoryToday();
+            }
+            else if (tagName == "DoyinHot")
+            {
+                window = new DoyinHot();
+            }
+            else if (tagName == "RednoteHot")
+            {
+                window = new RednoteHot();
+            }
+            else if (tagName == "BiliHot")
+            {
+                window = new BiliHot();
+            }
+            else if (tagName == "WeiboHot")
+            {
+                window = new WeiboHot();
+            }
+            else if (tagName == "ToutiaoHot")
+            {
+                window = new ToutiaoHot();
+            }
+            else if (tagName == "ZhihuHot")
+            {
+                window = new ZhihuHot();
+            }
+            else if(tagName == "BaiduHot")
+            {
+                window = new BaiduHot();
+            }
+            else if (tagName == "BaiduTvHot")
+            {
+                window = new BaiduTvHot();
+            }
+
+            else
+            {
+                window = null;
+                MessageBox.Show($"传入了未知的参数\n\n问题由 {btn.Name} 引发", "发生错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+
+
+            if (window != null) window.ShowDialog();
+
         }
 
-        private void button_BiliHot_Go_Click(object sender, EventArgs e)
-        {
-            using (BiliHot window = new BiliHot())
-            {
-                window.ShowDialog();
-            }
-        }
-
-        private void button_WeiboHot_Go_Click(object sender, EventArgs e)
-        {
-            using (WeiboHot window = new WeiboHot())
-            {
-                window.ShowDialog();
-            }
-        }
-
-        private void button_ToutiaoHot_Go_Click(object sender, EventArgs e)
-        {
-            using (ToutiaoHot window = new ToutiaoHot())
-            {
-                window.ShowDialog();
-            }
-        }
-
-        private void button_ZhihuHot_Go_Click(object sender, EventArgs e)
-        {
-            using (ZhihuHot window = new ZhihuHot())
-            {
-                window.ShowDialog();
-            }
-        }
     }
 }
