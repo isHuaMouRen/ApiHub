@@ -14,7 +14,7 @@ using static Funcitons.NormalFunc;
 
 namespace ApiHub.apiForms
 {
-    public partial class ToutiaoHot : Form
+    public partial class RednoteHot : Form
     {
         public class API
         {
@@ -27,13 +27,14 @@ namespace ApiHub.apiForms
 
             public class Data
             {
+                public int rank { get; set; }
                 public string title { get; set; }
-                public int hot_value { get; set; }
+                public string score { get; set; }
                 public string link { get; set; }
             }
         }
 
-        public static API.Root APIData;
+        public API.Root APIData;
 
         public async void RefreshAPI()
         {
@@ -42,9 +43,10 @@ namespace ApiHub.apiForms
                 button_Refresh.Enabled = false;
                 listView_main.Enabled = false;
 
+
                 using (HttpClient client = new HttpClient())
                 {
-                    File.WriteAllText(Main_Window.TempPath, await client.GetStringAsync(Main_Window.APIURL.toutiaoHot));
+                    File.WriteAllText(Main_Window.TempPath, await client.GetStringAsync(Main_Window.APIURL._60sAPI.rednoteHot));
                     APIData = ReadJson<API.Root>(Main_Window.TempPath);
                 }
 
@@ -53,16 +55,20 @@ namespace ApiHub.apiForms
                     listView_main.Items.Clear();
                     for (int i = 0; i < APIData.data.Length; i++)
                     {
-                        ListViewItem item = new ListViewItem($"{APIData.data[i].title}");
-                        item.SubItems.Add($"{APIData.data[i].hot_value}");
+                        ListViewItem item = new ListViewItem(APIData.data[i].title);
+
+                        item.SubItems.Add($"{APIData.data[i].rank}");
+                        item.SubItems.Add($"{APIData.data[i].score}");
                         item.SubItems.Add($"{APIData.data[i].link}");
+
                         listView_main.Items.Add(item);
                     }
                 }
                 else
                 {
-                    MessageBox.Show($"发生API内部错误!\n\n错误代码: {APIData.code}\n错误信息: {APIData.message}", "API内部错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"发生API内部错误\n\n错误代码: {APIData.code}\n错误信息: {APIData.message}", "API内部错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
 
 
 
@@ -73,7 +79,7 @@ namespace ApiHub.apiForms
             {
                 button_Refresh.Enabled = true;
                 listView_main.Enabled = true;
-                MessageBox.Show($"在获取API数据时发生错误\n\n错误原因:\n{ex}", "发生错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"在获取API数据时发生错误!\n\n错误原因:\n{ex}", "发生错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -85,17 +91,18 @@ namespace ApiHub.apiForms
 
 
 
-        public ToutiaoHot()
+
+
+
+
+
+
+        public RednoteHot()
         {
             InitializeComponent();
         }
 
-        private void button_Refresh_Click(object sender, EventArgs e)
-        {
-            RefreshAPI();
-        }
-
-        private void BiliHot_Load(object sender, EventArgs e)
+        private void RednoteHot_Load(object sender, EventArgs e)
         {
             RefreshAPI();
         }
@@ -104,14 +111,19 @@ namespace ApiHub.apiForms
         {
             if (listView_main.SelectedItems.Count > 0)
             {
-                if (MessageBox.Show($"{APIData.data[listView_main.SelectedIndices[0]].title}\n\n热度: {APIData.data[listView_main.SelectedIndices[0]].hot_value}\n链接:\n{APIData.data[listView_main.SelectedIndices[0]].link}\n\n点击\"是\"按钮，前往链接\n点击\"否\"按钮，留在此程序", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) 
+                if (MessageBox.Show($"{APIData.data[listView_main.SelectedIndices[0]].title}\n\n排名: {APIData.data[listView_main.SelectedIndices[0]].rank}\n热度: {APIData.data[listView_main.SelectedIndices[0]].score}\n\n链接:\n{APIData.data[listView_main.SelectedIndices[0]].link}\n\n点击\"是\"按钮跳转链接\n点击\"否\"按钮留在此处", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                 {
-                    Process.Start(APIData.data[listView_main.SelectedIndices[0]].link);
+                    Process.Start($"{APIData.data[listView_main.SelectedIndices[0]].link}");
                 }
             }
         }
 
-        private void ToutiaoHot_Resize(object sender, EventArgs e)
+        private void button_Refresh_Click(object sender, EventArgs e)
+        {
+            RefreshAPI();
+        }
+
+        private void RednoteHot_Resize(object sender, EventArgs e)
         {
             listView_main.Size = new Size(this.Width - 45, this.Height - 123);
         }

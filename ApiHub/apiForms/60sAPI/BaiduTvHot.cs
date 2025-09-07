@@ -10,11 +10,11 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static Funcitons.NormalFunc;
+using Funcitons;
 
 namespace ApiHub.apiForms
 {
-    public partial class ZhihuHot : Form
+    public partial class BaiduTvHot : Form
     {
         public class JsonConfig
         {
@@ -28,15 +28,13 @@ namespace ApiHub.apiForms
             public class Data
             {
                 public string title { get; set; }
-                public string detail { get; set; }
-                public string hot_value_desc { get; set; }
-                public int answer_cnt { get; set; }
-                public string created { get; set; }
-                public string link { get; set; }
+                public string desc { get; set; }
+                public string score_desc { get; set; }
+                public string url { get; set; }
             }
         }
 
-        public JsonConfig.Root apiData;
+        public static JsonConfig.Root apiData;
 
         public async void RefreshAPI()
         {
@@ -47,9 +45,8 @@ namespace ApiHub.apiForms
 
                 using (HttpClient client = new HttpClient())
                 {
-                    File.WriteAllText(Main_Window.TempPath, await client.GetStringAsync(Main_Window.APIURL.zhihuHot));
-                    apiData = ReadJson<JsonConfig.Root>(Main_Window.TempPath);
-
+                    File.WriteAllText(Main_Window.TempPath, await client.GetStringAsync(Main_Window.APIURL._60sAPI.baiduTvHot));
+                    apiData = Funcitons.NormalFunc.ReadJson<JsonConfig.Root>(Main_Window.TempPath);
                 }
 
                 if (apiData.code == 200)
@@ -58,18 +55,17 @@ namespace ApiHub.apiForms
                     for (int i = 0; i < apiData.data.Length; i++)
                     {
                         ListViewItem item = new ListViewItem($"{apiData.data[i].title}");
-                        item.SubItems.Add($"{apiData.data[i].detail}");
-                        item.SubItems.Add($"{apiData.data[i].hot_value_desc}");
-                        item.SubItems.Add($"{apiData.data[i].answer_cnt}");
-                        item.SubItems.Add($"{apiData.data[i].created}");
+                        item.SubItems.Add($"{apiData.data[i].desc}");
+                        item.SubItems.Add($"{apiData.data[i].score_desc}");
 
                         listView_main.Items.Add(item);
                     }
                 }
                 else
                 {
-                    MessageBox.Show($"发生了API内部错误!\n\n错误代码: {apiData.code}\n错误信息: {apiData.message}", "API内部错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"发生了API内部错误\n\n错误代码: {apiData.code}\n错误信息: {apiData.message}", "API内部错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
 
                 button_Refresh.Enabled = true;
                 listView_main.Enabled = true;
@@ -78,7 +74,7 @@ namespace ApiHub.apiForms
             {
                 button_Refresh.Enabled = true;
                 listView_main.Enabled = true;
-                MessageBox.Show($"在获取API数据时发生错误!\n\n错误原因:\n{ex}", "发生错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"在获取API数据时发生错误\n\n错误:\n{ex}", "发生错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -95,26 +91,16 @@ namespace ApiHub.apiForms
 
 
 
+        public static Size minSize;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-        public ZhihuHot()
+        public BaiduTvHot()
         {
             InitializeComponent();
+
+            minSize = this.Size - listView_main.Size;
         }
 
-        private void ZhihuHot_Load(object sender, EventArgs e)
+        private void BaiduTvHot_Load(object sender, EventArgs e)
         {
             RefreshAPI();
         }
@@ -124,24 +110,22 @@ namespace ApiHub.apiForms
             RefreshAPI();
         }
 
+        private void BaiduTvHot_Resize(object sender, EventArgs e)
+        {
+            listView_main.Size = this.Size - minSize;
+        }
+
         private void listView_main_ItemActivate(object sender, EventArgs e)
         {
             if (listView_main.SelectedItems.Count > 0)
             {
                 int index = listView_main.SelectedIndices[0];
-                if (MessageBox.Show($"{apiData.data[index].title}\n\n{apiData.data[index].detail}\n\n\n热度: {apiData.data[index].hot_value_desc}\n回答数: {apiData.data[index].answer_cnt}\n\n链接: {apiData.data[index].link}\n(注意: API所提供的知乎链接可能无法正常跳转, 请手动搜索话题)\n\n点击\"是\"选项, 跳转链接\n点击\"否\"选项, 留在此程序", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) 
+
+                if (MessageBox.Show($"{apiData.data[index].title}\n\n{apiData.data[index].desc}\n\n热度: {apiData.data[index].score_desc}\n\n\n链接: {apiData.data[index].url}", $"详细信息", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) 
                 {
-                    Process.Start($"{apiData.data[index].link}");
+                    Process.Start($"{apiData.data[index].url}");
                 }
             }
-        }
-
-        private void ZhihuHot_Resize(object sender, EventArgs e)
-        {
-            listView_main.Width = this.Width - 45;
-            listView_main.Height = this.Height - 123;
-
-            button_Refresh.Left = this.Width - button_Refresh.Width - 28;
         }
     }
 }

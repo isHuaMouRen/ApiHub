@@ -109,76 +109,112 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="apiForms\60sReadWorld.cs">
+    <Compile Include="apiForms\60sAPI\60sReadWorld.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="apiForms\60sReadWorld.Designer.cs">
+    <Compile Include="apiForms\60sAPI\60sReadWorld.Designer.cs">
       <DependentUpon>60sReadWorld.cs</DependentUpon>
     </Compile>
-    <Compile Include="apiForms\BaiduHot.cs">
+    <Compile Include="apiForms\60sAPI\BaiduHot.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="apiForms\BaiduHot.Designer.cs">
+    <Compile Include="apiForms\60sAPI\BaiduHot.Designer.cs">
       <DependentUpon>BaiduHot.cs</DependentUpon>
     </Compile>
-    <Compile Include="apiForms\BaiduTvHot.cs">
+    <Compile Include="apiForms\60sAPI\BaiduTiebaHot.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="apiForms\BaiduTvHot.Designer.cs">
+    <Compile Include="apiForms\60sAPI\BaiduTiebaHot.Designer.cs">
+      <DependentUpon>BaiduTiebaHot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="apiForms\60sAPI\BaiduTvHot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="apiForms\60sAPI\BaiduTvHot.Designer.cs">
       <DependentUpon>BaiduTvHot.cs</DependentUpon>
     </Compile>
-    <Compile Include="apiForms\Toutiaohot.cs">
+    <Compile Include="apiForms\60sAPI\EpicFreeGame.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="apiForms\Toutiaohot.Designer.cs">
+    <Compile Include="apiForms\60sAPI\EpicFreeGame.Designer.cs">
+      <DependentUpon>EpicFreeGame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="apiForms\60sAPI\MaoyanHot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="apiForms\60sAPI\MaoyanHot.Designer.cs">
+      <DependentUpon>MaoyanHot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="apiForms\60sAPI\NcmList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="apiForms\60sAPI\NcmList.Designer.cs">
+      <DependentUpon>NcmList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="apiForms\60sAPI\NcmListInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="apiForms\60sAPI\NcmListInfo.Designer.cs">
+      <DependentUpon>NcmListInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="apiForms\60sAPI\NcmListInfo_Song.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="apiForms\60sAPI\NcmListInfo_Song.Designer.cs">
+      <DependentUpon>NcmListInfo_Song.cs</DependentUpon>
+    </Compile>
+    <Compile Include="apiForms\60sAPI\Toutiaohot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="apiForms\60sAPI\Toutiaohot.Designer.cs">
       <DependentUpon>Toutiaohot.cs</DependentUpon>
     </Compile>
-    <Compile Include="apiForms\WeiboHot.cs">
+    <Compile Include="apiForms\60sAPI\WeiboHot.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="apiForms\WeiboHot.Designer.cs">
+    <Compile Include="apiForms\60sAPI\WeiboHot.Designer.cs">
       <DependentUpon>WeiboHot.cs</DependentUpon>
     </Compile>
-    <Compile Include="apiForms\BiliHot.cs">
+    <Compile Include="apiForms\60sAPI\BiliHot.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="apiForms\BiliHot.Designer.cs">
+    <Compile Include="apiForms\60sAPI\BiliHot.Designer.cs">
       <DependentUpon>BiliHot.cs</DependentUpon>
     </Compile>
-    <Compile Include="apiForms\bingWallpaper.cs">
+    <Compile Include="apiForms\60sAPI\bingWallpaper.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="apiForms\bingWallpaper.Designer.cs">
+    <Compile Include="apiForms\60sAPI\bingWallpaper.Designer.cs">
       <DependentUpon>bingWallpaper.cs</DependentUpon>
     </Compile>
-    <Compile Include="apiForms\DoyinHot.cs">
+    <Compile Include="apiForms\60sAPI\DoyinHot.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="apiForms\DoyinHot.Designer.cs">
+    <Compile Include="apiForms\60sAPI\DoyinHot.Designer.cs">
       <DependentUpon>DoyinHot.cs</DependentUpon>
     </Compile>
-    <Compile Include="apiForms\ExchangeRate.cs">
+    <Compile Include="apiForms\60sAPI\ExchangeRate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="apiForms\ExchangeRate.Designer.cs">
+    <Compile Include="apiForms\60sAPI\ExchangeRate.Designer.cs">
       <DependentUpon>ExchangeRate.cs</DependentUpon>
     </Compile>
-    <Compile Include="apiForms\HistoryToday.cs">
+    <Compile Include="apiForms\60sAPI\HistoryToday.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="apiForms\HistoryToday.Designer.cs">
+    <Compile Include="apiForms\60sAPI\HistoryToday.Designer.cs">
       <DependentUpon>HistoryToday.cs</DependentUpon>
     </Compile>
-    <Compile Include="apiForms\RednoteHot.cs">
+    <Compile Include="apiForms\60sAPI\RednoteHot.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="apiForms\RednoteHot.Designer.cs">
+    <Compile Include="apiForms\60sAPI\RednoteHot.Designer.cs">
       <DependentUpon>RednoteHot.cs</DependentUpon>
     </Compile>
-    <Compile Include="apiForms\ZhihuHot.cs">
+    <Compile Include="apiForms\60sAPI\ZhihuHot.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="apiForms\ZhihuHot.Designer.cs">
+    <Compile Include="apiForms\60sAPI\ZhihuHot.Designer.cs">
       <DependentUpon>ZhihuHot.cs</DependentUpon>
     </Compile>
     <Compile Include="Main_Window.cs">
@@ -196,40 +232,58 @@
       <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
     <Compile Include="utils\Functions.cs" />
-    <EmbeddedResource Include="apiForms\60sReadWorld.resx">
+    <EmbeddedResource Include="apiForms\60sAPI\60sReadWorld.resx">
       <DependentUpon>60sReadWorld.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="apiForms\BaiduHot.resx">
+    <EmbeddedResource Include="apiForms\60sAPI\BaiduHot.resx">
       <DependentUpon>BaiduHot.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="apiForms\BaiduTvHot.resx">
+    <EmbeddedResource Include="apiForms\60sAPI\BaiduTiebaHot.resx">
+      <DependentUpon>BaiduTiebaHot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="apiForms\60sAPI\BaiduTvHot.resx">
       <DependentUpon>BaiduTvHot.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="apiForms\Toutiaohot.resx">
+    <EmbeddedResource Include="apiForms\60sAPI\EpicFreeGame.resx">
+      <DependentUpon>EpicFreeGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="apiForms\60sAPI\MaoyanHot.resx">
+      <DependentUpon>MaoyanHot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="apiForms\60sAPI\NcmList.resx">
+      <DependentUpon>NcmList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="apiForms\60sAPI\NcmListInfo.resx">
+      <DependentUpon>NcmListInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="apiForms\60sAPI\NcmListInfo_Song.resx">
+      <DependentUpon>NcmListInfo_Song.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="apiForms\60sAPI\Toutiaohot.resx">
       <DependentUpon>Toutiaohot.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="apiForms\WeiboHot.resx">
+    <EmbeddedResource Include="apiForms\60sAPI\WeiboHot.resx">
       <DependentUpon>WeiboHot.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="apiForms\BiliHot.resx">
+    <EmbeddedResource Include="apiForms\60sAPI\BiliHot.resx">
       <DependentUpon>BiliHot.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="apiForms\bingWallpaper.resx">
+    <EmbeddedResource Include="apiForms\60sAPI\bingWallpaper.resx">
       <DependentUpon>bingWallpaper.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="apiForms\DoyinHot.resx">
+    <EmbeddedResource Include="apiForms\60sAPI\DoyinHot.resx">
       <DependentUpon>DoyinHot.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="apiForms\ExchangeRate.resx">
+    <EmbeddedResource Include="apiForms\60sAPI\ExchangeRate.resx">
       <DependentUpon>ExchangeRate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="apiForms\HistoryToday.resx">
+    <EmbeddedResource Include="apiForms\60sAPI\HistoryToday.resx">
       <DependentUpon>HistoryToday.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="apiForms\RednoteHot.resx">
+    <EmbeddedResource Include="apiForms\60sAPI\RednoteHot.resx">
       <DependentUpon>RednoteHot.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="apiForms\ZhihuHot.resx">
+    <EmbeddedResource Include="apiForms\60sAPI\ZhihuHot.resx">
       <DependentUpon>ZhihuHot.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main_Window.resx">

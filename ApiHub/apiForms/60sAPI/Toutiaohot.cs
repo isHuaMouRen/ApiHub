@@ -14,7 +14,7 @@ using static Funcitons.NormalFunc;
 
 namespace ApiHub.apiForms
 {
-    public partial class BiliHot : Form
+    public partial class ToutiaoHot : Form
     {
         public class API
         {
@@ -28,6 +28,7 @@ namespace ApiHub.apiForms
             public class Data
             {
                 public string title { get; set; }
+                public int hot_value { get; set; }
                 public string link { get; set; }
             }
         }
@@ -43,7 +44,7 @@ namespace ApiHub.apiForms
 
                 using (HttpClient client = new HttpClient())
                 {
-                    File.WriteAllText(Main_Window.TempPath, await client.GetStringAsync(Main_Window.APIURL.biliHot));
+                    File.WriteAllText(Main_Window.TempPath, await client.GetStringAsync(Main_Window.APIURL._60sAPI.toutiaoHot));
                     APIData = ReadJson<API.Root>(Main_Window.TempPath);
                 }
 
@@ -53,6 +54,7 @@ namespace ApiHub.apiForms
                     for (int i = 0; i < APIData.data.Length; i++)
                     {
                         ListViewItem item = new ListViewItem($"{APIData.data[i].title}");
+                        item.SubItems.Add($"{APIData.data[i].hot_value}");
                         item.SubItems.Add($"{APIData.data[i].link}");
                         listView_main.Items.Add(item);
                     }
@@ -83,7 +85,7 @@ namespace ApiHub.apiForms
 
 
 
-        public BiliHot()
+        public ToutiaoHot()
         {
             InitializeComponent();
         }
@@ -102,17 +104,15 @@ namespace ApiHub.apiForms
         {
             if (listView_main.SelectedItems.Count > 0)
             {
-                if (MessageBox.Show($"{APIData.data[listView_main.SelectedIndices[0]].title}\n\n链接:\n{APIData.data[listView_main.SelectedIndices[0]].link}\n\n点击\"是\"按钮，前往链接\n点击\"否\"按钮，留在此程序", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) 
+                if (MessageBox.Show($"{APIData.data[listView_main.SelectedIndices[0]].title}\n\n热度: {APIData.data[listView_main.SelectedIndices[0]].hot_value}\n链接:\n{APIData.data[listView_main.SelectedIndices[0]].link}\n\n点击\"是\"按钮，前往链接\n点击\"否\"按钮，留在此程序", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) 
                 {
                     Process.Start(APIData.data[listView_main.SelectedIndices[0]].link);
                 }
             }
         }
 
-        private void BiliHot_Resize(object sender, EventArgs e)
+        private void ToutiaoHot_Resize(object sender, EventArgs e)
         {
-            button_Refresh.Left = this.Width - 147;
-
             listView_main.Size = new Size(this.Width - 45, this.Height - 123);
         }
     }

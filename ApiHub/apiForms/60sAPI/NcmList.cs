@@ -10,11 +10,11 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static Funcitons.NormalFunc;
+using Funcitons;
 
-namespace ApiHub.apiForms
+namespace ApiHub.apiForms._60sAPI
 {
-    public partial class BaiduHot : Form
+    public partial class NcmList : Form
     {
         public class JsonConfig
         {
@@ -27,14 +27,15 @@ namespace ApiHub.apiForms
 
             public class Data
             {
-                public string title { get; set; }
-                public string score_desc { get; set; }
-                public string type_desc { get; set; }
-                public string url { get; set; }
+                public long id { get; set; }
+                public string name { get; set; }
+                public string description { get; set; }
+                public string updated { get; set; }
+                public string link { get; set; }
             }
         }
 
-        public static JsonConfig.Root apiData;
+        public JsonConfig.Root apiData;
 
         public async void RefreshAPI()
         {
@@ -43,10 +44,10 @@ namespace ApiHub.apiForms
                 button_Refresh.Enabled = false;
                 listView_main.Enabled = false;
 
-                using (HttpClient client = new HttpClient()) 
+                using (HttpClient client = new HttpClient())
                 {
-                    File.WriteAllText(Main_Window.TempPath, await client.GetStringAsync(Main_Window.APIURL.baiduHot));
-                    apiData = ReadJson<JsonConfig.Root>(Main_Window.TempPath);
+                    File.WriteAllText(Main_Window.TempPath, await client.GetStringAsync(Main_Window.APIURL._60sAPI.ncmList));
+                    apiData = NormalFunc.ReadJson<JsonConfig.Root>(Main_Window.TempPath);
                 }
 
                 if (apiData.code == 200)
@@ -54,9 +55,10 @@ namespace ApiHub.apiForms
                     listView_main.Items.Clear();
                     for (int i = 0; i < apiData.data.Length; i++)
                     {
-                        ListViewItem item = new ListViewItem($"{apiData.data[i].title}");
-                        item.SubItems.Add($"{apiData.data[i].score_desc}");
-                        item.SubItems.Add($"{apiData.data[i].type_desc}");
+                        ListViewItem item = new ListViewItem($"{apiData.data[i].name}");
+                        item.SubItems.Add($"{apiData.data[i].id}");
+                        item.SubItems.Add($"{apiData.data[i].description}");
+                        item.SubItems.Add($"{apiData.data[i].updated}");
 
                         listView_main.Items.Add(item);
                     }
@@ -73,45 +75,23 @@ namespace ApiHub.apiForms
             {
                 button_Refresh.Enabled = true;
                 listView_main.Enabled = true;
-                MessageBox.Show($"在获取API数据时发生错误!\n\n错误原因:\n{ex}", "发生错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"在获取API数据时发生错误\n\n错误:\n{ex}", "发生错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
 
 
 
+        public Size minSize;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        public static Size minSize;
-
-        public BaiduHot()
+        public NcmList()
         {
             InitializeComponent();
 
             minSize = this.Size - listView_main.Size;
         }
 
-        private void BaiduHot_Load(object sender, EventArgs e)
+        private void NcmList_Load(object sender, EventArgs e)
         {
             RefreshAPI();
         }
@@ -121,21 +101,18 @@ namespace ApiHub.apiForms
             RefreshAPI();
         }
 
-        private void BaiduHot_Resize(object sender, EventArgs e)
+        private void NcmList_Resize(object sender, EventArgs e)
         {
             listView_main.Size = this.Size - minSize;
         }
 
         private void listView_main_ItemActivate(object sender, EventArgs e)
         {
-            if (listView_main.SelectedItems.Count > 0)
-            {
-                int index = listView_main.SelectedIndices[0];
+            int index = listView_main.SelectedIndices[0];
 
-                if (MessageBox.Show($"{apiData.data[index].title}\n\n热度: {apiData.data[index].score_desc}\n\n链接: {apiData.data[index].url}\n\n点击\"是\"选项，跳转链接\n点击\"否\"选项，留在此程序", "提示", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) 
-                {
-                    Process.Start($"{apiData.data[index].url}");
-                }
+            if (MessageBox.Show($"{apiData.data[index].name}\n\n{apiData.data[index].description}\n\n\n链接: {apiData.data[index].link}\n\n选择\"是\"跳转链接\n选择\"否\"留在程序", "详细信息", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) 
+            {
+                Process.Start($"{apiData.data[index].link}");
             }
         }
     }

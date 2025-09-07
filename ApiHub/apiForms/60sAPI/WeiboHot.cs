@@ -43,7 +43,7 @@ namespace ApiHub.apiForms
 
                 using (HttpClient client = new HttpClient())
                 {
-                    File.WriteAllText(Main_Window.TempPath, await client.GetStringAsync(Main_Window.APIURL.weiboHot));
+                    File.WriteAllText(Main_Window.TempPath, await client.GetStringAsync(Main_Window.APIURL._60sAPI.weiboHot));
                     APIData = ReadJson<API.Root>(Main_Window.TempPath);
                 }
 

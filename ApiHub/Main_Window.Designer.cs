@@ -29,6 +29,30 @@
         private void InitializeComponent()
         {
             this.panel_main = new System.Windows.Forms.Panel();
+            this.panel_MaoyanHot = new System.Windows.Forms.Panel();
+            this.button_MaoyanHot_Go = new System.Windows.Forms.Button();
+            this.label_MaoyanHot_Subtitle = new System.Windows.Forms.Label();
+            this.label_MaoyanHot_Title = new System.Windows.Forms.Label();
+            this.panel_NcmListInfo = new System.Windows.Forms.Panel();
+            this.button_NcmListInfo = new System.Windows.Forms.Button();
+            this.label_NcmListInfo_Subtitle = new System.Windows.Forms.Label();
+            this.label_NcmListInfo_Title = new System.Windows.Forms.Label();
+            this.panel_NcmList = new System.Windows.Forms.Panel();
+            this.button_NcmList_Go = new System.Windows.Forms.Button();
+            this.label_NcmList_Subtitle = new System.Windows.Forms.Label();
+            this.label_NcmList_Title = new System.Windows.Forms.Label();
+            this.panel_BaiduTiebaHot = new System.Windows.Forms.Panel();
+            this.button_BaiduTiebaHot_Go = new System.Windows.Forms.Button();
+            this.label_BaiduTiebaHot_Subtitle = new System.Windows.Forms.Label();
+            this.label_BaiduTiebaHot_Title = new System.Windows.Forms.Label();
+            this.panel_BaiduTvHot = new System.Windows.Forms.Panel();
+            this.button_BaiduTvHot_Go = new System.Windows.Forms.Button();
+            this.label_BaiduTvHot_Subtitle = new System.Windows.Forms.Label();
+            this.label_BaiduTvHot_Title = new System.Windows.Forms.Label();
+            this.panel_BaiduHot = new System.Windows.Forms.Panel();
+            this.button_BaiduHot_Go = new System.Windows.Forms.Button();
+            this.label_BaiduHot_Subtitle = new System.Windows.Forms.Label();
+            this.label_BaiduHot_Title = new System.Windows.Forms.Label();
             this.label_NoMore = new System.Windows.Forms.Label();
             this.panel_ZhihuHot = new System.Windows.Forms.Panel();
             this.button_ZhihuHot_Go = new System.Windows.Forms.Button();
@@ -80,15 +104,18 @@
             this.项目仓库ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.aPI仓库ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel_BaiduHot = new System.Windows.Forms.Panel();
-            this.button_BaiduHot_Go = new System.Windows.Forms.Button();
-            this.label_BaiduHot_Subtitle = new System.Windows.Forms.Label();
-            this.label_BaiduHot_Title = new System.Windows.Forms.Label();
-            this.panel_BaiduTvHot = new System.Windows.Forms.Panel();
-            this.button_BaiduTvHot_Go = new System.Windows.Forms.Button();
-            this.label_BaiduTvHot_Subtitle = new System.Windows.Forms.Label();
-            this.label_BaiduTvHot_Title = new System.Windows.Forms.Label();
+            this.label_Tools = new System.Windows.Forms.Label();
+            this.panel_EpicFreeGame = new System.Windows.Forms.Panel();
+            this.button_EpicFreeGame_Go = new System.Windows.Forms.Button();
+            this.label_EpicFreeGame_Subtitle = new System.Windows.Forms.Label();
+            this.label_EpicFreeGame_Title = new System.Windows.Forms.Label();
             this.panel_main.SuspendLayout();
+            this.panel_MaoyanHot.SuspendLayout();
+            this.panel_NcmListInfo.SuspendLayout();
+            this.panel_NcmList.SuspendLayout();
+            this.panel_BaiduTiebaHot.SuspendLayout();
+            this.panel_BaiduTvHot.SuspendLayout();
+            this.panel_BaiduHot.SuspendLayout();
             this.panel_ZhihuHot.SuspendLayout();
             this.panel_ToutiaoHot.SuspendLayout();
             this.panel_WeiboHot.SuspendLayout();
@@ -100,14 +127,19 @@
             this.panel_BingWallpaper.SuspendLayout();
             this.panel_60sReadWorld.SuspendLayout();
             this.menuStrip.SuspendLayout();
-            this.panel_BaiduHot.SuspendLayout();
-            this.panel_BaiduTvHot.SuspendLayout();
+            this.panel_EpicFreeGame.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_main
             // 
             this.panel_main.AutoScroll = true;
             this.panel_main.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_main.Controls.Add(this.panel_EpicFreeGame);
+            this.panel_main.Controls.Add(this.label_Tools);
+            this.panel_main.Controls.Add(this.panel_MaoyanHot);
+            this.panel_main.Controls.Add(this.panel_NcmListInfo);
+            this.panel_main.Controls.Add(this.panel_NcmList);
+            this.panel_main.Controls.Add(this.panel_BaiduTiebaHot);
             this.panel_main.Controls.Add(this.panel_BaiduTvHot);
             this.panel_main.Controls.Add(this.panel_BaiduHot);
             this.panel_main.Controls.Add(this.label_NoMore);
@@ -128,9 +160,260 @@
             this.panel_main.Size = new System.Drawing.Size(780, 470);
             this.panel_main.TabIndex = 1;
             // 
+            // panel_MaoyanHot
+            // 
+            this.panel_MaoyanHot.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_MaoyanHot.Controls.Add(this.button_MaoyanHot_Go);
+            this.panel_MaoyanHot.Controls.Add(this.label_MaoyanHot_Subtitle);
+            this.panel_MaoyanHot.Controls.Add(this.label_MaoyanHot_Title);
+            this.panel_MaoyanHot.Location = new System.Drawing.Point(380, 895);
+            this.panel_MaoyanHot.Name = "panel_MaoyanHot";
+            this.panel_MaoyanHot.Size = new System.Drawing.Size(375, 110);
+            this.panel_MaoyanHot.TabIndex = 18;
+            this.panel_MaoyanHot.Tag = "";
+            // 
+            // button_MaoyanHot_Go
+            // 
+            this.button_MaoyanHot_Go.Location = new System.Drawing.Point(7, 73);
+            this.button_MaoyanHot_Go.Name = "button_MaoyanHot_Go";
+            this.button_MaoyanHot_Go.Size = new System.Drawing.Size(363, 32);
+            this.button_MaoyanHot_Go.TabIndex = 2;
+            this.button_MaoyanHot_Go.Tag = "MaoyanHot";
+            this.button_MaoyanHot_Go.Text = "前往";
+            this.button_MaoyanHot_Go.UseVisualStyleBackColor = true;
+            this.button_MaoyanHot_Go.Click += new System.EventHandler(this.ApiButton_Click);
+            // 
+            // label_MaoyanHot_Subtitle
+            // 
+            this.label_MaoyanHot_Subtitle.Location = new System.Drawing.Point(4, 30);
+            this.label_MaoyanHot_Subtitle.Name = "label_MaoyanHot_Subtitle";
+            this.label_MaoyanHot_Subtitle.Size = new System.Drawing.Size(137, 40);
+            this.label_MaoyanHot_Subtitle.TabIndex = 1;
+            this.label_MaoyanHot_Subtitle.Text = "实时电影票房\r\n来源: 60s API\r\n";
+            this.label_MaoyanHot_Subtitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label_MaoyanHot_Title
+            // 
+            this.label_MaoyanHot_Title.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_MaoyanHot_Title.Location = new System.Drawing.Point(3, 6);
+            this.label_MaoyanHot_Title.Name = "label_MaoyanHot_Title";
+            this.label_MaoyanHot_Title.Size = new System.Drawing.Size(287, 20);
+            this.label_MaoyanHot_Title.TabIndex = 0;
+            this.label_MaoyanHot_Title.Text = "[实时] 猫眼票房榜";
+            this.label_MaoyanHot_Title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel_NcmListInfo
+            // 
+            this.panel_NcmListInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_NcmListInfo.Controls.Add(this.button_NcmListInfo);
+            this.panel_NcmListInfo.Controls.Add(this.label_NcmListInfo_Subtitle);
+            this.panel_NcmListInfo.Controls.Add(this.label_NcmListInfo_Title);
+            this.panel_NcmListInfo.Location = new System.Drawing.Point(3, 895);
+            this.panel_NcmListInfo.Name = "panel_NcmListInfo";
+            this.panel_NcmListInfo.Size = new System.Drawing.Size(375, 110);
+            this.panel_NcmListInfo.TabIndex = 17;
+            this.panel_NcmListInfo.Tag = "";
+            // 
+            // button_NcmListInfo
+            // 
+            this.button_NcmListInfo.Location = new System.Drawing.Point(7, 73);
+            this.button_NcmListInfo.Name = "button_NcmListInfo";
+            this.button_NcmListInfo.Size = new System.Drawing.Size(363, 32);
+            this.button_NcmListInfo.TabIndex = 2;
+            this.button_NcmListInfo.Tag = "NcmListInfo";
+            this.button_NcmListInfo.Text = "前往";
+            this.button_NcmListInfo.UseVisualStyleBackColor = true;
+            this.button_NcmListInfo.Click += new System.EventHandler(this.ApiButton_Click);
+            // 
+            // label_NcmListInfo_Subtitle
+            // 
+            this.label_NcmListInfo_Subtitle.Location = new System.Drawing.Point(4, 30);
+            this.label_NcmListInfo_Subtitle.Name = "label_NcmListInfo_Subtitle";
+            this.label_NcmListInfo_Subtitle.Size = new System.Drawing.Size(137, 40);
+            this.label_NcmListInfo_Subtitle.TabIndex = 1;
+            this.label_NcmListInfo_Subtitle.Text = "网易云音乐榜单\r\n来源: 60s API\r\n";
+            this.label_NcmListInfo_Subtitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label_NcmListInfo_Title
+            // 
+            this.label_NcmListInfo_Title.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_NcmListInfo_Title.Location = new System.Drawing.Point(3, 6);
+            this.label_NcmListInfo_Title.Name = "label_NcmListInfo_Title";
+            this.label_NcmListInfo_Title.Size = new System.Drawing.Size(287, 20);
+            this.label_NcmListInfo_Title.TabIndex = 0;
+            this.label_NcmListInfo_Title.Text = "[实时] 网易云榜单详细";
+            this.label_NcmListInfo_Title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel_NcmList
+            // 
+            this.panel_NcmList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_NcmList.Controls.Add(this.button_NcmList_Go);
+            this.panel_NcmList.Controls.Add(this.label_NcmList_Subtitle);
+            this.panel_NcmList.Controls.Add(this.label_NcmList_Title);
+            this.panel_NcmList.Location = new System.Drawing.Point(380, 779);
+            this.panel_NcmList.Name = "panel_NcmList";
+            this.panel_NcmList.Size = new System.Drawing.Size(375, 110);
+            this.panel_NcmList.TabIndex = 16;
+            this.panel_NcmList.Tag = "";
+            // 
+            // button_NcmList_Go
+            // 
+            this.button_NcmList_Go.Location = new System.Drawing.Point(7, 73);
+            this.button_NcmList_Go.Name = "button_NcmList_Go";
+            this.button_NcmList_Go.Size = new System.Drawing.Size(363, 32);
+            this.button_NcmList_Go.TabIndex = 2;
+            this.button_NcmList_Go.Tag = "NcmList";
+            this.button_NcmList_Go.Text = "前往";
+            this.button_NcmList_Go.UseVisualStyleBackColor = true;
+            this.button_NcmList_Go.Click += new System.EventHandler(this.ApiButton_Click);
+            // 
+            // label_NcmList_Subtitle
+            // 
+            this.label_NcmList_Subtitle.Location = new System.Drawing.Point(4, 30);
+            this.label_NcmList_Subtitle.Name = "label_NcmList_Subtitle";
+            this.label_NcmList_Subtitle.Size = new System.Drawing.Size(137, 40);
+            this.label_NcmList_Subtitle.TabIndex = 1;
+            this.label_NcmList_Subtitle.Text = "网易云音乐榜单\r\n来源: 60s API\r\n";
+            this.label_NcmList_Subtitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label_NcmList_Title
+            // 
+            this.label_NcmList_Title.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_NcmList_Title.Location = new System.Drawing.Point(3, 6);
+            this.label_NcmList_Title.Name = "label_NcmList_Title";
+            this.label_NcmList_Title.Size = new System.Drawing.Size(287, 20);
+            this.label_NcmList_Title.TabIndex = 0;
+            this.label_NcmList_Title.Text = "[实时] 网易云榜单列表";
+            this.label_NcmList_Title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel_BaiduTiebaHot
+            // 
+            this.panel_BaiduTiebaHot.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_BaiduTiebaHot.Controls.Add(this.button_BaiduTiebaHot_Go);
+            this.panel_BaiduTiebaHot.Controls.Add(this.label_BaiduTiebaHot_Subtitle);
+            this.panel_BaiduTiebaHot.Controls.Add(this.label_BaiduTiebaHot_Title);
+            this.panel_BaiduTiebaHot.Location = new System.Drawing.Point(3, 779);
+            this.panel_BaiduTiebaHot.Name = "panel_BaiduTiebaHot";
+            this.panel_BaiduTiebaHot.Size = new System.Drawing.Size(375, 110);
+            this.panel_BaiduTiebaHot.TabIndex = 15;
+            this.panel_BaiduTiebaHot.Tag = "";
+            // 
+            // button_BaiduTiebaHot_Go
+            // 
+            this.button_BaiduTiebaHot_Go.Location = new System.Drawing.Point(7, 73);
+            this.button_BaiduTiebaHot_Go.Name = "button_BaiduTiebaHot_Go";
+            this.button_BaiduTiebaHot_Go.Size = new System.Drawing.Size(363, 32);
+            this.button_BaiduTiebaHot_Go.TabIndex = 2;
+            this.button_BaiduTiebaHot_Go.Tag = "BaiduTiebaHot";
+            this.button_BaiduTiebaHot_Go.Text = "前往";
+            this.button_BaiduTiebaHot_Go.UseVisualStyleBackColor = true;
+            this.button_BaiduTiebaHot_Go.Click += new System.EventHandler(this.ApiButton_Click);
+            // 
+            // label_BaiduTiebaHot_Subtitle
+            // 
+            this.label_BaiduTiebaHot_Subtitle.Location = new System.Drawing.Point(4, 30);
+            this.label_BaiduTiebaHot_Subtitle.Name = "label_BaiduTiebaHot_Subtitle";
+            this.label_BaiduTiebaHot_Subtitle.Size = new System.Drawing.Size(137, 40);
+            this.label_BaiduTiebaHot_Subtitle.TabIndex = 1;
+            this.label_BaiduTiebaHot_Subtitle.Text = "百度贴吧话题\r\n来源: 60s API\r\n";
+            this.label_BaiduTiebaHot_Subtitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label_BaiduTiebaHot_Title
+            // 
+            this.label_BaiduTiebaHot_Title.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_BaiduTiebaHot_Title.Location = new System.Drawing.Point(3, 6);
+            this.label_BaiduTiebaHot_Title.Name = "label_BaiduTiebaHot_Title";
+            this.label_BaiduTiebaHot_Title.Size = new System.Drawing.Size(287, 20);
+            this.label_BaiduTiebaHot_Title.TabIndex = 0;
+            this.label_BaiduTiebaHot_Title.Text = "[实时] 百度贴吧话题榜";
+            this.label_BaiduTiebaHot_Title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel_BaiduTvHot
+            // 
+            this.panel_BaiduTvHot.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_BaiduTvHot.Controls.Add(this.button_BaiduTvHot_Go);
+            this.panel_BaiduTvHot.Controls.Add(this.label_BaiduTvHot_Subtitle);
+            this.panel_BaiduTvHot.Controls.Add(this.label_BaiduTvHot_Title);
+            this.panel_BaiduTvHot.Location = new System.Drawing.Point(380, 663);
+            this.panel_BaiduTvHot.Name = "panel_BaiduTvHot";
+            this.panel_BaiduTvHot.Size = new System.Drawing.Size(375, 110);
+            this.panel_BaiduTvHot.TabIndex = 14;
+            this.panel_BaiduTvHot.Tag = "BaiduTvHot";
+            // 
+            // button_BaiduTvHot_Go
+            // 
+            this.button_BaiduTvHot_Go.Location = new System.Drawing.Point(7, 73);
+            this.button_BaiduTvHot_Go.Name = "button_BaiduTvHot_Go";
+            this.button_BaiduTvHot_Go.Size = new System.Drawing.Size(363, 32);
+            this.button_BaiduTvHot_Go.TabIndex = 2;
+            this.button_BaiduTvHot_Go.Tag = "BaiduTvHot";
+            this.button_BaiduTvHot_Go.Text = "前往";
+            this.button_BaiduTvHot_Go.UseVisualStyleBackColor = true;
+            this.button_BaiduTvHot_Go.Click += new System.EventHandler(this.ApiButton_Click);
+            // 
+            // label_BaiduTvHot_Subtitle
+            // 
+            this.label_BaiduTvHot_Subtitle.Location = new System.Drawing.Point(4, 30);
+            this.label_BaiduTvHot_Subtitle.Name = "label_BaiduTvHot_Subtitle";
+            this.label_BaiduTvHot_Subtitle.Size = new System.Drawing.Size(137, 40);
+            this.label_BaiduTvHot_Subtitle.TabIndex = 1;
+            this.label_BaiduTvHot_Subtitle.Text = "百度电视剧榜\r\n来源: 60s API\r\n";
+            this.label_BaiduTvHot_Subtitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label_BaiduTvHot_Title
+            // 
+            this.label_BaiduTvHot_Title.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_BaiduTvHot_Title.Location = new System.Drawing.Point(3, 6);
+            this.label_BaiduTvHot_Title.Name = "label_BaiduTvHot_Title";
+            this.label_BaiduTvHot_Title.Size = new System.Drawing.Size(287, 20);
+            this.label_BaiduTvHot_Title.TabIndex = 0;
+            this.label_BaiduTvHot_Title.Text = "[实时] 百度电视剧榜";
+            this.label_BaiduTvHot_Title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel_BaiduHot
+            // 
+            this.panel_BaiduHot.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_BaiduHot.Controls.Add(this.button_BaiduHot_Go);
+            this.panel_BaiduHot.Controls.Add(this.label_BaiduHot_Subtitle);
+            this.panel_BaiduHot.Controls.Add(this.label_BaiduHot_Title);
+            this.panel_BaiduHot.Location = new System.Drawing.Point(3, 663);
+            this.panel_BaiduHot.Name = "panel_BaiduHot";
+            this.panel_BaiduHot.Size = new System.Drawing.Size(375, 110);
+            this.panel_BaiduHot.TabIndex = 13;
+            // 
+            // button_BaiduHot_Go
+            // 
+            this.button_BaiduHot_Go.Location = new System.Drawing.Point(7, 73);
+            this.button_BaiduHot_Go.Name = "button_BaiduHot_Go";
+            this.button_BaiduHot_Go.Size = new System.Drawing.Size(363, 32);
+            this.button_BaiduHot_Go.TabIndex = 2;
+            this.button_BaiduHot_Go.Tag = "BaiduHot";
+            this.button_BaiduHot_Go.Text = "前往";
+            this.button_BaiduHot_Go.UseVisualStyleBackColor = true;
+            this.button_BaiduHot_Go.Click += new System.EventHandler(this.ApiButton_Click);
+            // 
+            // label_BaiduHot_Subtitle
+            // 
+            this.label_BaiduHot_Subtitle.Location = new System.Drawing.Point(4, 30);
+            this.label_BaiduHot_Subtitle.Name = "label_BaiduHot_Subtitle";
+            this.label_BaiduHot_Subtitle.Size = new System.Drawing.Size(137, 40);
+            this.label_BaiduHot_Subtitle.TabIndex = 1;
+            this.label_BaiduHot_Subtitle.Text = "百度实时热搜\r\n来源: 60s API\r\n";
+            this.label_BaiduHot_Subtitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label_BaiduHot_Title
+            // 
+            this.label_BaiduHot_Title.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_BaiduHot_Title.Location = new System.Drawing.Point(3, 6);
+            this.label_BaiduHot_Title.Name = "label_BaiduHot_Title";
+            this.label_BaiduHot_Title.Size = new System.Drawing.Size(287, 20);
+            this.label_BaiduHot_Title.TabIndex = 0;
+            this.label_BaiduHot_Title.Text = "[实时] 百度实时热搜";
+            this.label_BaiduHot_Title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // label_NoMore
             // 
-            this.label_NoMore.Location = new System.Drawing.Point(3, 991);
+            this.label_NoMore.Location = new System.Drawing.Point(0, 1210);
             this.label_NoMore.Name = "label_NoMore";
             this.label_NoMore.Size = new System.Drawing.Size(755, 20);
             this.label_NoMore.TabIndex = 12;
@@ -629,88 +912,57 @@
             this.aPI仓库ToolStripMenuItem.Text = "60sAPI仓库*";
             this.aPI仓库ToolStripMenuItem.Click += new System.EventHandler(this.aPI仓库ToolStripMenuItem_Click);
             // 
-            // panel_BaiduHot
+            // label_Tools
             // 
-            this.panel_BaiduHot.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel_BaiduHot.Controls.Add(this.button_BaiduHot_Go);
-            this.panel_BaiduHot.Controls.Add(this.label_BaiduHot_Subtitle);
-            this.panel_BaiduHot.Controls.Add(this.label_BaiduHot_Title);
-            this.panel_BaiduHot.Location = new System.Drawing.Point(3, 663);
-            this.panel_BaiduHot.Name = "panel_BaiduHot";
-            this.panel_BaiduHot.Size = new System.Drawing.Size(375, 110);
-            this.panel_BaiduHot.TabIndex = 13;
+            this.label_Tools.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_Tools.Location = new System.Drawing.Point(3, 1008);
+            this.label_Tools.Name = "label_Tools";
+            this.label_Tools.Size = new System.Drawing.Size(752, 40);
+            this.label_Tools.TabIndex = 19;
+            this.label_Tools.Text = "🛠实用工具";
+            this.label_Tools.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // button_BaiduHot_Go
+            // panel_EpicFreeGame
             // 
-            this.button_BaiduHot_Go.Location = new System.Drawing.Point(7, 73);
-            this.button_BaiduHot_Go.Name = "button_BaiduHot_Go";
-            this.button_BaiduHot_Go.Size = new System.Drawing.Size(363, 32);
-            this.button_BaiduHot_Go.TabIndex = 2;
-            this.button_BaiduHot_Go.Tag = "BaiduHot";
-            this.button_BaiduHot_Go.Text = "前往";
-            this.button_BaiduHot_Go.UseVisualStyleBackColor = true;
-            this.button_BaiduHot_Go.Click += new System.EventHandler(this.ApiButton_Click);
+            this.panel_EpicFreeGame.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_EpicFreeGame.Controls.Add(this.button_EpicFreeGame_Go);
+            this.panel_EpicFreeGame.Controls.Add(this.label_EpicFreeGame_Subtitle);
+            this.panel_EpicFreeGame.Controls.Add(this.label_EpicFreeGame_Title);
+            this.panel_EpicFreeGame.Location = new System.Drawing.Point(3, 1051);
+            this.panel_EpicFreeGame.Name = "panel_EpicFreeGame";
+            this.panel_EpicFreeGame.Size = new System.Drawing.Size(375, 110);
+            this.panel_EpicFreeGame.TabIndex = 20;
+            this.panel_EpicFreeGame.Tag = "";
             // 
-            // label_BaiduHot_Subtitle
+            // button_EpicFreeGame_Go
             // 
-            this.label_BaiduHot_Subtitle.Location = new System.Drawing.Point(4, 30);
-            this.label_BaiduHot_Subtitle.Name = "label_BaiduHot_Subtitle";
-            this.label_BaiduHot_Subtitle.Size = new System.Drawing.Size(137, 40);
-            this.label_BaiduHot_Subtitle.TabIndex = 1;
-            this.label_BaiduHot_Subtitle.Text = "百度实时热搜\r\n来源: 60s API\r\n";
-            this.label_BaiduHot_Subtitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_EpicFreeGame_Go.Location = new System.Drawing.Point(7, 73);
+            this.button_EpicFreeGame_Go.Name = "button_EpicFreeGame_Go";
+            this.button_EpicFreeGame_Go.Size = new System.Drawing.Size(363, 32);
+            this.button_EpicFreeGame_Go.TabIndex = 2;
+            this.button_EpicFreeGame_Go.Tag = "EpicFreeGame";
+            this.button_EpicFreeGame_Go.Text = "前往";
+            this.button_EpicFreeGame_Go.UseVisualStyleBackColor = true;
+            this.button_EpicFreeGame_Go.Click += new System.EventHandler(this.ApiButton_Click);
             // 
-            // label_BaiduHot_Title
+            // label_EpicFreeGame_Subtitle
             // 
-            this.label_BaiduHot_Title.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_BaiduHot_Title.Location = new System.Drawing.Point(3, 6);
-            this.label_BaiduHot_Title.Name = "label_BaiduHot_Title";
-            this.label_BaiduHot_Title.Size = new System.Drawing.Size(287, 20);
-            this.label_BaiduHot_Title.TabIndex = 0;
-            this.label_BaiduHot_Title.Text = "[实时] 百度实时热搜";
-            this.label_BaiduHot_Title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label_EpicFreeGame_Subtitle.Location = new System.Drawing.Point(4, 30);
+            this.label_EpicFreeGame_Subtitle.Name = "label_EpicFreeGame_Subtitle";
+            this.label_EpicFreeGame_Subtitle.Size = new System.Drawing.Size(216, 40);
+            this.label_EpicFreeGame_Subtitle.TabIndex = 1;
+            this.label_EpicFreeGame_Subtitle.Text = "每周更新的Epic Games 免费游戏\r\n来源: 60s API\r\n";
+            this.label_EpicFreeGame_Subtitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // panel_BaiduTvHot
+            // label_EpicFreeGame_Title
             // 
-            this.panel_BaiduTvHot.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel_BaiduTvHot.Controls.Add(this.button_BaiduTvHot_Go);
-            this.panel_BaiduTvHot.Controls.Add(this.label_BaiduTvHot_Subtitle);
-            this.panel_BaiduTvHot.Controls.Add(this.label_BaiduTvHot_Title);
-            this.panel_BaiduTvHot.Location = new System.Drawing.Point(380, 663);
-            this.panel_BaiduTvHot.Name = "panel_BaiduTvHot";
-            this.panel_BaiduTvHot.Size = new System.Drawing.Size(375, 110);
-            this.panel_BaiduTvHot.TabIndex = 14;
-            this.panel_BaiduTvHot.Tag = "BaiduTvHot";
-            // 
-            // button_BaiduTvHot_Go
-            // 
-            this.button_BaiduTvHot_Go.Location = new System.Drawing.Point(7, 73);
-            this.button_BaiduTvHot_Go.Name = "button_BaiduTvHot_Go";
-            this.button_BaiduTvHot_Go.Size = new System.Drawing.Size(363, 32);
-            this.button_BaiduTvHot_Go.TabIndex = 2;
-            this.button_BaiduTvHot_Go.Tag = "BaiduTvHot";
-            this.button_BaiduTvHot_Go.Text = "前往";
-            this.button_BaiduTvHot_Go.UseVisualStyleBackColor = true;
-            this.button_BaiduTvHot_Go.Click += new System.EventHandler(this.ApiButton_Click);
-            // 
-            // label_BaiduTvHot_Subtitle
-            // 
-            this.label_BaiduTvHot_Subtitle.Location = new System.Drawing.Point(4, 30);
-            this.label_BaiduTvHot_Subtitle.Name = "label_BaiduTvHot_Subtitle";
-            this.label_BaiduTvHot_Subtitle.Size = new System.Drawing.Size(137, 40);
-            this.label_BaiduTvHot_Subtitle.TabIndex = 1;
-            this.label_BaiduTvHot_Subtitle.Text = "百度电视剧榜\r\n来源: 60s API\r\n";
-            this.label_BaiduTvHot_Subtitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label_BaiduTvHot_Title
-            // 
-            this.label_BaiduTvHot_Title.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_BaiduTvHot_Title.Location = new System.Drawing.Point(3, 6);
-            this.label_BaiduTvHot_Title.Name = "label_BaiduTvHot_Title";
-            this.label_BaiduTvHot_Title.Size = new System.Drawing.Size(287, 20);
-            this.label_BaiduTvHot_Title.TabIndex = 0;
-            this.label_BaiduTvHot_Title.Text = "[实时] 百度电视剧榜";
-            this.label_BaiduTvHot_Title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label_EpicFreeGame_Title.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_EpicFreeGame_Title.Location = new System.Drawing.Point(3, 6);
+            this.label_EpicFreeGame_Title.Name = "label_EpicFreeGame_Title";
+            this.label_EpicFreeGame_Title.Size = new System.Drawing.Size(287, 20);
+            this.label_EpicFreeGame_Title.TabIndex = 0;
+            this.label_EpicFreeGame_Title.Text = "[工具] Epic Games 免费游戏";
+            this.label_EpicFreeGame_Title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // Main_Window
             // 
@@ -729,6 +981,12 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ApiHub";
             this.panel_main.ResumeLayout(false);
+            this.panel_MaoyanHot.ResumeLayout(false);
+            this.panel_NcmListInfo.ResumeLayout(false);
+            this.panel_NcmList.ResumeLayout(false);
+            this.panel_BaiduTiebaHot.ResumeLayout(false);
+            this.panel_BaiduTvHot.ResumeLayout(false);
+            this.panel_BaiduHot.ResumeLayout(false);
             this.panel_ZhihuHot.ResumeLayout(false);
             this.panel_ToutiaoHot.ResumeLayout(false);
             this.panel_WeiboHot.ResumeLayout(false);
@@ -741,8 +999,7 @@
             this.panel_60sReadWorld.ResumeLayout(false);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
-            this.panel_BaiduHot.ResumeLayout(false);
-            this.panel_BaiduTvHot.ResumeLayout(false);
+            this.panel_EpicFreeGame.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -809,6 +1066,27 @@
         private System.Windows.Forms.Button button_BaiduTvHot_Go;
         private System.Windows.Forms.Label label_BaiduTvHot_Subtitle;
         private System.Windows.Forms.Label label_BaiduTvHot_Title;
+        private System.Windows.Forms.Panel panel_BaiduTiebaHot;
+        private System.Windows.Forms.Button button_BaiduTiebaHot_Go;
+        private System.Windows.Forms.Label label_BaiduTiebaHot_Subtitle;
+        private System.Windows.Forms.Label label_BaiduTiebaHot_Title;
+        private System.Windows.Forms.Panel panel_NcmList;
+        private System.Windows.Forms.Button button_NcmList_Go;
+        private System.Windows.Forms.Label label_NcmList_Subtitle;
+        private System.Windows.Forms.Label label_NcmList_Title;
+        private System.Windows.Forms.Panel panel_NcmListInfo;
+        private System.Windows.Forms.Button button_NcmListInfo;
+        private System.Windows.Forms.Label label_NcmListInfo_Subtitle;
+        private System.Windows.Forms.Label label_NcmListInfo_Title;
+        private System.Windows.Forms.Panel panel_MaoyanHot;
+        private System.Windows.Forms.Button button_MaoyanHot_Go;
+        private System.Windows.Forms.Label label_MaoyanHot_Subtitle;
+        private System.Windows.Forms.Label label_MaoyanHot_Title;
+        private System.Windows.Forms.Label label_Tools;
+        private System.Windows.Forms.Panel panel_EpicFreeGame;
+        private System.Windows.Forms.Button button_EpicFreeGame_Go;
+        private System.Windows.Forms.Label label_EpicFreeGame_Subtitle;
+        private System.Windows.Forms.Label label_EpicFreeGame_Title;
     }
 }
 

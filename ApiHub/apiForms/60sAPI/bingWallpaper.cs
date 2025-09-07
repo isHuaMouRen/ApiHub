@@ -48,7 +48,7 @@ namespace ApiHub.apiForms
 
                 using (HttpClient http = new HttpClient())
                 {
-                    File.WriteAllText(Main_Window.TempPath, await http.GetStringAsync(Main_Window.APIURL.bingWallpaper));
+                    File.WriteAllText(Main_Window.TempPath, await http.GetStringAsync(Main_Window.APIURL._60sAPI.bingWallpaper));
                     APIData = ReadJson<API.Root>(Main_Window.TempPath);
 
                     if (APIData.code == 200)

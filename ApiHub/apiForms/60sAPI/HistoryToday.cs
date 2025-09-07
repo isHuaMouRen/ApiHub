@@ -47,7 +47,7 @@ namespace ApiHub.apiForms
             {
                 using (HttpClient client = new HttpClient())
                 {
-                    File.WriteAllText(Main_Window.TempPath, await client.GetStringAsync(Main_Window.APIURL.historyToday));
+                    File.WriteAllText(Main_Window.TempPath, await client.GetStringAsync(Main_Window.APIURL._60sAPI.historyToday));
                     APIData = ReadJson<API.Root>(Main_Window.TempPath);
                 }
 

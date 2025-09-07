@@ -1,20 +1,20 @@
-﻿using System;
+﻿using Funcitons;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Diagnostics;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Funcitons;
+using System.IO;
+using System.Diagnostics;
 
 namespace ApiHub.apiForms
 {
-    public partial class BaiduTvHot : Form
+    public partial class BaiduTiebaHot : Form
     {
         public class JsonConfig
         {
@@ -24,7 +24,6 @@ namespace ApiHub.apiForms
                 public string message { get; set; }
                 public JsonConfig.Data[] data { get; set; }
             }
-
             public class Data
             {
                 public string title { get; set; }
@@ -45,8 +44,8 @@ namespace ApiHub.apiForms
 
                 using (HttpClient client = new HttpClient())
                 {
-                    File.WriteAllText(Main_Window.TempPath, await client.GetStringAsync(Main_Window.APIURL.baiduTvHot));
-                    apiData = Funcitons.NormalFunc.ReadJson<JsonConfig.Root>(Main_Window.TempPath);
+                    File.WriteAllText(Main_Window.TempPath, await client.GetStringAsync(Main_Window.APIURL._60sAPI.baiduTiebaHot));
+                    apiData = NormalFunc.ReadJson<JsonConfig.Root>(Main_Window.TempPath);
                 }
 
                 if (apiData.code == 200)
@@ -57,24 +56,20 @@ namespace ApiHub.apiForms
                         ListViewItem item = new ListViewItem($"{apiData.data[i].title}");
                         item.SubItems.Add($"{apiData.data[i].desc}");
                         item.SubItems.Add($"{apiData.data[i].score_desc}");
-
                         listView_main.Items.Add(item);
                     }
                 }
                 else
                 {
-                    MessageBox.Show($"发生了API内部错误\n\n错误代码: {apiData.code}\n错误信息: {apiData.message}", "API内部错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"发生API内部错误\n\n错误代码: {apiData.code}\n错误信息: {apiData.message}", "API内部错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
 
                 button_Refresh.Enabled = true;
                 listView_main.Enabled = true;
             }
             catch (Exception ex)
             {
-                button_Refresh.Enabled = true;
-                listView_main.Enabled = true;
-                MessageBox.Show($"在获取API数据时发生错误\n\n错误:\n{ex}", "发生错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                button_Refresh.Enabled = true; listView_main.Enabled = true; MessageBox.Show($"在获取API数据时发生错误!\n\n错误:\n{ex}", "发生错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -84,25 +79,11 @@ namespace ApiHub.apiForms
 
 
 
+        public Size minSize;
 
-
-
-
-
-
-
-        public static Size minSize;
-
-        public BaiduTvHot()
+        public BaiduTiebaHot()
         {
             InitializeComponent();
-
-            minSize = this.Size - listView_main.Size;
-        }
-
-        private void BaiduTvHot_Load(object sender, EventArgs e)
-        {
-            RefreshAPI();
         }
 
         private void button_Refresh_Click(object sender, EventArgs e)
@@ -110,7 +91,12 @@ namespace ApiHub.apiForms
             RefreshAPI();
         }
 
-        private void BaiduTvHot_Resize(object sender, EventArgs e)
+        private void BaiduTiebaHot_Load(object sender, EventArgs e)
+        {
+            RefreshAPI();
+        }
+
+        private void BaiduTiebaHot_Resize(object sender, EventArgs e)
         {
             listView_main.Size = this.Size - minSize;
         }
@@ -120,8 +106,7 @@ namespace ApiHub.apiForms
             if (listView_main.SelectedItems.Count > 0)
             {
                 int index = listView_main.SelectedIndices[0];
-
-                if (MessageBox.Show($"{apiData.data[index].title}\n\n{apiData.data[index].desc}\n\n热度: {apiData.data[index].score_desc}\n\n\n链接: {apiData.data[index].url}", $"详细信息", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) 
+                if (MessageBox.Show($"{apiData.data[index].title}\n\n{apiData.data[index].desc}\n\n热度: {apiData.data[index].score_desc}\n\n链接: {apiData.data[index].url}\n\n选择\"是\"跳转链接\n选择\"否\"留在此程序", "详细信息", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) 
                 {
                     Process.Start($"{apiData.data[index].url}");
                 }

@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using Funcitons;
 using static Funcitons.NormalFunc;
 using System.Diagnostics;
+using ApiHub.apiForms._60sAPI;
 
 namespace ApiHub
 {
@@ -34,7 +35,7 @@ namespace ApiHub
         public static string ConfigPath = $"{RunPath}\\config.json";
         public static string TempPath = $"{Path.GetTempPath()}apitemp.json";
         public static string RootUrl = "https://60s.viki.moe";
-        public static string Version = "Beta 1.3.4.10";
+        public static string Version = "Beta 1.4.2.7";
 
         public static JsonConfig.Config.Root GlobalConfig;
 
@@ -51,18 +52,26 @@ namespace ApiHub
         //API地址
         public static class APIURL
         {
-            public static string _60sReadworld;
-            public static string bingWallpaper;
-            public static string exchangeRate;
-            public static string historyToday;
-            public static string doyinHot;
-            public static string rednoteHot;
-            public static string biliHot;
-            public static string weiboHot;
-            public static string toutiaoHot;
-            public static string zhihuHot;
-            public static string baiduHot;
-            public static string baiduTvHot;
+            public static class _60sAPI
+            {
+                public static string _60sReadworld;
+                public static string bingWallpaper;
+                public static string exchangeRate;
+                public static string historyToday;
+                public static string doyinHot;
+                public static string rednoteHot;
+                public static string biliHot;
+                public static string weiboHot;
+                public static string toutiaoHot;
+                public static string zhihuHot;
+                public static string baiduHot;
+                public static string baiduTvHot;
+                public static string baiduTiebaHot;
+                public static string ncmList;
+                public static string maoyanHot;
+                public static string epicFreeGame;
+            }
+            
         }
 
 
@@ -76,7 +85,7 @@ namespace ApiHub
             {
                 GlobalConfig = new JsonConfig.Config.Root
                 {
-                    api_url = "cn1"
+                    api_url = "cn1",
                 };
 
                 WriteJson<JsonConfig.Config.Root>(ConfigPath, GlobalConfig);
@@ -113,19 +122,22 @@ namespace ApiHub
                 WriteJson(ConfigPath, GlobalConfig);
             }
 
-
-            APIURL._60sReadworld = $"{RootUrl}/v2/60s";
-            APIURL.bingWallpaper = $"{RootUrl}/v2/bing";
-            APIURL.exchangeRate = $"{RootUrl}/v2/exchange_rate";
-            APIURL.historyToday = $"{RootUrl}/v2/today_in_history";
-            APIURL.doyinHot = $"{RootUrl}/v2/douyin";
-            APIURL.rednoteHot = $"{RootUrl}/v2/rednote";
-            APIURL.biliHot = $"{RootUrl}/v2/bili";
-            APIURL.weiboHot = $"{RootUrl}/v2/weibo";
-            APIURL.toutiaoHot = $"{RootUrl}/v2/toutiao";
-            APIURL.zhihuHot = $"{RootUrl}/v2/zhihu";
-            APIURL.baiduHot = $"{RootUrl}/v2/baidu/realtime";
-            APIURL.baiduTvHot = $"{RootUrl}/v2/baidu/teleplay";
+            APIURL._60sAPI._60sReadworld = $"{RootUrl}/v2/60s";
+            APIURL._60sAPI.bingWallpaper = $"{RootUrl}/v2/bing";
+            APIURL._60sAPI.exchangeRate = $"{RootUrl}/v2/exchange_rate";
+            APIURL._60sAPI.historyToday = $"{RootUrl}/v2/today_in_history";
+            APIURL._60sAPI.doyinHot = $"{RootUrl}/v2/douyin";
+            APIURL._60sAPI.rednoteHot = $"{RootUrl}/v2/rednote";
+            APIURL._60sAPI.biliHot = $"{RootUrl}/v2/bili";
+            APIURL._60sAPI.weiboHot = $"{RootUrl}/v2/weibo";
+            APIURL._60sAPI.toutiaoHot = $"{RootUrl}/v2/toutiao";
+            APIURL._60sAPI.zhihuHot = $"{RootUrl}/v2/zhihu";
+            APIURL._60sAPI.baiduHot = $"{RootUrl}/v2/baidu/realtime";
+            APIURL._60sAPI.baiduTvHot = $"{RootUrl}/v2/baidu/teleplay";
+            APIURL._60sAPI.baiduTiebaHot = $"{RootUrl}/v2/baidu/tieba";
+            APIURL._60sAPI.ncmList = $"{RootUrl}/v2/ncm-rank";
+            APIURL._60sAPI.maoyanHot = $"{RootUrl}/v2/maoyan";
+            APIURL._60sAPI.epicFreeGame = $"{RootUrl}/v2/epic";
         }
 
         private void 关于程序ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -200,13 +212,33 @@ namespace ApiHub
             {
                 window = new ZhihuHot();
             }
-            else if(tagName == "BaiduHot")
+            else if (tagName == "BaiduHot")
             {
                 window = new BaiduHot();
             }
             else if (tagName == "BaiduTvHot")
             {
                 window = new BaiduTvHot();
+            }
+            else if (tagName == "BaiduTiebaHot")
+            {
+                window = new BaiduTiebaHot();
+            }
+            else if (tagName == "NcmList")
+            {
+                window = new NcmList();
+            }
+            else if (tagName == "NcmListInfo")
+            {
+                window = new NcmListInfo();
+            }
+            else if (tagName == "MaoyanHot")
+            {
+                window = new MaoyanHot();
+            }
+            else if (tagName == "EpicFreeGame")
+            {
+                window = new EpicFreeGame();
             }
 
             else
