@@ -29,6 +29,27 @@
         private void InitializeComponent()
         {
             this.panel_main = new System.Windows.Forms.Panel();
+            this.panel_PublicIP = new System.Windows.Forms.Panel();
+            this.button_PublicIP = new System.Windows.Forms.Button();
+            this.label_PublicIP_Subtitle = new System.Windows.Forms.Label();
+            this.label_PublicIP_Title = new System.Windows.Forms.Label();
+            this.panel_Fanyi = new System.Windows.Forms.Panel();
+            this.button_Fanyi = new System.Windows.Forms.Button();
+            this.label_Fanyi_Subtitle = new System.Windows.Forms.Label();
+            this.label_Title = new System.Windows.Forms.Label();
+            this.panel_BaikeSearch = new System.Windows.Forms.Panel();
+            this.button_BaikeSearch_Go = new System.Windows.Forms.Button();
+            this.label_BaikeSearch_Subtitle = new System.Windows.Forms.Label();
+            this.label_BaikeSearch_Title = new System.Windows.Forms.Label();
+            this.panel_QrcodeBuild = new System.Windows.Forms.Panel();
+            this.button_QrcodeBuild_Go = new System.Windows.Forms.Button();
+            this.label_QrcodeBuild_Subtitle = new System.Windows.Forms.Label();
+            this.label_QrcodeBuild_Title = new System.Windows.Forms.Label();
+            this.panel_EpicFreeGame = new System.Windows.Forms.Panel();
+            this.button_EpicFreeGame_Go = new System.Windows.Forms.Button();
+            this.label_EpicFreeGame_Subtitle = new System.Windows.Forms.Label();
+            this.label_EpicFreeGame_Title = new System.Windows.Forms.Label();
+            this.label_Tools = new System.Windows.Forms.Label();
             this.panel_MaoyanHot = new System.Windows.Forms.Panel();
             this.button_MaoyanHot_Go = new System.Windows.Forms.Button();
             this.label_MaoyanHot_Subtitle = new System.Windows.Forms.Label();
@@ -104,12 +125,12 @@
             this.项目仓库ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.aPI仓库ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label_Tools = new System.Windows.Forms.Label();
-            this.panel_EpicFreeGame = new System.Windows.Forms.Panel();
-            this.button_EpicFreeGame_Go = new System.Windows.Forms.Button();
-            this.label_EpicFreeGame_Subtitle = new System.Windows.Forms.Label();
-            this.label_EpicFreeGame_Title = new System.Windows.Forms.Label();
             this.panel_main.SuspendLayout();
+            this.panel_PublicIP.SuspendLayout();
+            this.panel_Fanyi.SuspendLayout();
+            this.panel_BaikeSearch.SuspendLayout();
+            this.panel_QrcodeBuild.SuspendLayout();
+            this.panel_EpicFreeGame.SuspendLayout();
             this.panel_MaoyanHot.SuspendLayout();
             this.panel_NcmListInfo.SuspendLayout();
             this.panel_NcmList.SuspendLayout();
@@ -127,13 +148,16 @@
             this.panel_BingWallpaper.SuspendLayout();
             this.panel_60sReadWorld.SuspendLayout();
             this.menuStrip.SuspendLayout();
-            this.panel_EpicFreeGame.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_main
             // 
             this.panel_main.AutoScroll = true;
             this.panel_main.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_main.Controls.Add(this.panel_PublicIP);
+            this.panel_main.Controls.Add(this.panel_Fanyi);
+            this.panel_main.Controls.Add(this.panel_BaikeSearch);
+            this.panel_main.Controls.Add(this.panel_QrcodeBuild);
             this.panel_main.Controls.Add(this.panel_EpicFreeGame);
             this.panel_main.Controls.Add(this.label_Tools);
             this.panel_main.Controls.Add(this.panel_MaoyanHot);
@@ -159,6 +183,226 @@
             this.panel_main.Name = "panel_main";
             this.panel_main.Size = new System.Drawing.Size(780, 470);
             this.panel_main.TabIndex = 1;
+            // 
+            // panel_PublicIP
+            // 
+            this.panel_PublicIP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_PublicIP.Controls.Add(this.button_PublicIP);
+            this.panel_PublicIP.Controls.Add(this.label_PublicIP_Subtitle);
+            this.panel_PublicIP.Controls.Add(this.label_PublicIP_Title);
+            this.panel_PublicIP.Location = new System.Drawing.Point(3, 1283);
+            this.panel_PublicIP.Name = "panel_PublicIP";
+            this.panel_PublicIP.Size = new System.Drawing.Size(375, 110);
+            this.panel_PublicIP.TabIndex = 24;
+            this.panel_PublicIP.Tag = "";
+            // 
+            // button_PublicIP
+            // 
+            this.button_PublicIP.Location = new System.Drawing.Point(7, 73);
+            this.button_PublicIP.Name = "button_PublicIP";
+            this.button_PublicIP.Size = new System.Drawing.Size(363, 32);
+            this.button_PublicIP.TabIndex = 2;
+            this.button_PublicIP.Tag = "PublicIP";
+            this.button_PublicIP.Text = "前往";
+            this.button_PublicIP.UseVisualStyleBackColor = true;
+            this.button_PublicIP.Click += new System.EventHandler(this.ApiButton_Click);
+            // 
+            // label_PublicIP_Subtitle
+            // 
+            this.label_PublicIP_Subtitle.Location = new System.Drawing.Point(4, 30);
+            this.label_PublicIP_Subtitle.Name = "label_PublicIP_Subtitle";
+            this.label_PublicIP_Subtitle.Size = new System.Drawing.Size(216, 40);
+            this.label_PublicIP_Subtitle.TabIndex = 1;
+            this.label_PublicIP_Subtitle.Text = "查看公网IP\r\n来源: 60s API\r\n";
+            this.label_PublicIP_Subtitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label_PublicIP_Title
+            // 
+            this.label_PublicIP_Title.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_PublicIP_Title.Location = new System.Drawing.Point(3, 6);
+            this.label_PublicIP_Title.Name = "label_PublicIP_Title";
+            this.label_PublicIP_Title.Size = new System.Drawing.Size(287, 20);
+            this.label_PublicIP_Title.TabIndex = 0;
+            this.label_PublicIP_Title.Text = "[工具] 公网IP查看";
+            this.label_PublicIP_Title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel_Fanyi
+            // 
+            this.panel_Fanyi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_Fanyi.Controls.Add(this.button_Fanyi);
+            this.panel_Fanyi.Controls.Add(this.label_Fanyi_Subtitle);
+            this.panel_Fanyi.Controls.Add(this.label_Title);
+            this.panel_Fanyi.Location = new System.Drawing.Point(380, 1167);
+            this.panel_Fanyi.Name = "panel_Fanyi";
+            this.panel_Fanyi.Size = new System.Drawing.Size(375, 110);
+            this.panel_Fanyi.TabIndex = 23;
+            this.panel_Fanyi.Tag = "";
+            // 
+            // button_Fanyi
+            // 
+            this.button_Fanyi.Location = new System.Drawing.Point(7, 73);
+            this.button_Fanyi.Name = "button_Fanyi";
+            this.button_Fanyi.Size = new System.Drawing.Size(363, 32);
+            this.button_Fanyi.TabIndex = 2;
+            this.button_Fanyi.Tag = "Fanyi";
+            this.button_Fanyi.Text = "前往";
+            this.button_Fanyi.UseVisualStyleBackColor = true;
+            this.button_Fanyi.Click += new System.EventHandler(this.ApiButton_Click);
+            // 
+            // label_Fanyi_Subtitle
+            // 
+            this.label_Fanyi_Subtitle.Location = new System.Drawing.Point(4, 30);
+            this.label_Fanyi_Subtitle.Name = "label_Fanyi_Subtitle";
+            this.label_Fanyi_Subtitle.Size = new System.Drawing.Size(216, 40);
+            this.label_Fanyi_Subtitle.TabIndex = 1;
+            this.label_Fanyi_Subtitle.Text = "网易有道提供的109种语言的在线翻译\r\n来源: 60s API\r\n";
+            this.label_Fanyi_Subtitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label_Title
+            // 
+            this.label_Title.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_Title.Location = new System.Drawing.Point(3, 6);
+            this.label_Title.Name = "label_Title";
+            this.label_Title.Size = new System.Drawing.Size(287, 20);
+            this.label_Title.TabIndex = 0;
+            this.label_Title.Text = "[工具] 在线翻译";
+            this.label_Title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel_BaikeSearch
+            // 
+            this.panel_BaikeSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_BaikeSearch.Controls.Add(this.button_BaikeSearch_Go);
+            this.panel_BaikeSearch.Controls.Add(this.label_BaikeSearch_Subtitle);
+            this.panel_BaikeSearch.Controls.Add(this.label_BaikeSearch_Title);
+            this.panel_BaikeSearch.Location = new System.Drawing.Point(3, 1167);
+            this.panel_BaikeSearch.Name = "panel_BaikeSearch";
+            this.panel_BaikeSearch.Size = new System.Drawing.Size(375, 110);
+            this.panel_BaikeSearch.TabIndex = 22;
+            this.panel_BaikeSearch.Tag = "";
+            // 
+            // button_BaikeSearch_Go
+            // 
+            this.button_BaikeSearch_Go.Location = new System.Drawing.Point(7, 73);
+            this.button_BaikeSearch_Go.Name = "button_BaikeSearch_Go";
+            this.button_BaikeSearch_Go.Size = new System.Drawing.Size(363, 32);
+            this.button_BaikeSearch_Go.TabIndex = 2;
+            this.button_BaikeSearch_Go.Tag = "BaikeSearch";
+            this.button_BaikeSearch_Go.Text = "前往";
+            this.button_BaikeSearch_Go.UseVisualStyleBackColor = true;
+            this.button_BaikeSearch_Go.Click += new System.EventHandler(this.ApiButton_Click);
+            // 
+            // label_BaikeSearch_Subtitle
+            // 
+            this.label_BaikeSearch_Subtitle.Location = new System.Drawing.Point(4, 30);
+            this.label_BaikeSearch_Subtitle.Name = "label_BaikeSearch_Subtitle";
+            this.label_BaikeSearch_Subtitle.Size = new System.Drawing.Size(216, 40);
+            this.label_BaikeSearch_Subtitle.TabIndex = 1;
+            this.label_BaikeSearch_Subtitle.Text = "智能搜索百度百科词条\r\n来源: 60s API\r\n";
+            this.label_BaikeSearch_Subtitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label_BaikeSearch_Title
+            // 
+            this.label_BaikeSearch_Title.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_BaikeSearch_Title.Location = new System.Drawing.Point(3, 6);
+            this.label_BaikeSearch_Title.Name = "label_BaikeSearch_Title";
+            this.label_BaikeSearch_Title.Size = new System.Drawing.Size(287, 20);
+            this.label_BaikeSearch_Title.TabIndex = 0;
+            this.label_BaikeSearch_Title.Text = "[工具] 百度百科搜索";
+            this.label_BaikeSearch_Title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel_QrcodeBuild
+            // 
+            this.panel_QrcodeBuild.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_QrcodeBuild.Controls.Add(this.button_QrcodeBuild_Go);
+            this.panel_QrcodeBuild.Controls.Add(this.label_QrcodeBuild_Subtitle);
+            this.panel_QrcodeBuild.Controls.Add(this.label_QrcodeBuild_Title);
+            this.panel_QrcodeBuild.Location = new System.Drawing.Point(380, 1051);
+            this.panel_QrcodeBuild.Name = "panel_QrcodeBuild";
+            this.panel_QrcodeBuild.Size = new System.Drawing.Size(375, 110);
+            this.panel_QrcodeBuild.TabIndex = 21;
+            this.panel_QrcodeBuild.Tag = "";
+            // 
+            // button_QrcodeBuild_Go
+            // 
+            this.button_QrcodeBuild_Go.Location = new System.Drawing.Point(7, 73);
+            this.button_QrcodeBuild_Go.Name = "button_QrcodeBuild_Go";
+            this.button_QrcodeBuild_Go.Size = new System.Drawing.Size(363, 32);
+            this.button_QrcodeBuild_Go.TabIndex = 2;
+            this.button_QrcodeBuild_Go.Tag = "QrcodeBuild";
+            this.button_QrcodeBuild_Go.Text = "前往";
+            this.button_QrcodeBuild_Go.UseVisualStyleBackColor = true;
+            this.button_QrcodeBuild_Go.Click += new System.EventHandler(this.ApiButton_Click);
+            // 
+            // label_QrcodeBuild_Subtitle
+            // 
+            this.label_QrcodeBuild_Subtitle.Location = new System.Drawing.Point(4, 30);
+            this.label_QrcodeBuild_Subtitle.Name = "label_QrcodeBuild_Subtitle";
+            this.label_QrcodeBuild_Subtitle.Size = new System.Drawing.Size(216, 40);
+            this.label_QrcodeBuild_Subtitle.TabIndex = 1;
+            this.label_QrcodeBuild_Subtitle.Text = "支持生成 URL/文本 二维码\r\n来源: 60s API\r\n";
+            this.label_QrcodeBuild_Subtitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label_QrcodeBuild_Title
+            // 
+            this.label_QrcodeBuild_Title.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_QrcodeBuild_Title.Location = new System.Drawing.Point(3, 6);
+            this.label_QrcodeBuild_Title.Name = "label_QrcodeBuild_Title";
+            this.label_QrcodeBuild_Title.Size = new System.Drawing.Size(287, 20);
+            this.label_QrcodeBuild_Title.TabIndex = 0;
+            this.label_QrcodeBuild_Title.Text = "[工具] 生成二维码";
+            this.label_QrcodeBuild_Title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // panel_EpicFreeGame
+            // 
+            this.panel_EpicFreeGame.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_EpicFreeGame.Controls.Add(this.button_EpicFreeGame_Go);
+            this.panel_EpicFreeGame.Controls.Add(this.label_EpicFreeGame_Subtitle);
+            this.panel_EpicFreeGame.Controls.Add(this.label_EpicFreeGame_Title);
+            this.panel_EpicFreeGame.Location = new System.Drawing.Point(3, 1051);
+            this.panel_EpicFreeGame.Name = "panel_EpicFreeGame";
+            this.panel_EpicFreeGame.Size = new System.Drawing.Size(375, 110);
+            this.panel_EpicFreeGame.TabIndex = 20;
+            this.panel_EpicFreeGame.Tag = "";
+            // 
+            // button_EpicFreeGame_Go
+            // 
+            this.button_EpicFreeGame_Go.Location = new System.Drawing.Point(7, 73);
+            this.button_EpicFreeGame_Go.Name = "button_EpicFreeGame_Go";
+            this.button_EpicFreeGame_Go.Size = new System.Drawing.Size(363, 32);
+            this.button_EpicFreeGame_Go.TabIndex = 2;
+            this.button_EpicFreeGame_Go.Tag = "EpicFreeGame";
+            this.button_EpicFreeGame_Go.Text = "前往";
+            this.button_EpicFreeGame_Go.UseVisualStyleBackColor = true;
+            this.button_EpicFreeGame_Go.Click += new System.EventHandler(this.ApiButton_Click);
+            // 
+            // label_EpicFreeGame_Subtitle
+            // 
+            this.label_EpicFreeGame_Subtitle.Location = new System.Drawing.Point(4, 30);
+            this.label_EpicFreeGame_Subtitle.Name = "label_EpicFreeGame_Subtitle";
+            this.label_EpicFreeGame_Subtitle.Size = new System.Drawing.Size(216, 40);
+            this.label_EpicFreeGame_Subtitle.TabIndex = 1;
+            this.label_EpicFreeGame_Subtitle.Text = "每周更新的Epic Games 免费游戏\r\n来源: 60s API\r\n";
+            this.label_EpicFreeGame_Subtitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label_EpicFreeGame_Title
+            // 
+            this.label_EpicFreeGame_Title.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_EpicFreeGame_Title.Location = new System.Drawing.Point(3, 6);
+            this.label_EpicFreeGame_Title.Name = "label_EpicFreeGame_Title";
+            this.label_EpicFreeGame_Title.Size = new System.Drawing.Size(287, 20);
+            this.label_EpicFreeGame_Title.TabIndex = 0;
+            this.label_EpicFreeGame_Title.Text = "[工具] Epic Games 免费游戏";
+            this.label_EpicFreeGame_Title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label_Tools
+            // 
+            this.label_Tools.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_Tools.Location = new System.Drawing.Point(3, 1008);
+            this.label_Tools.Name = "label_Tools";
+            this.label_Tools.Size = new System.Drawing.Size(752, 40);
+            this.label_Tools.TabIndex = 19;
+            this.label_Tools.Text = "🛠实用工具";
+            this.label_Tools.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // panel_MaoyanHot
             // 
@@ -413,7 +657,7 @@
             // 
             // label_NoMore
             // 
-            this.label_NoMore.Location = new System.Drawing.Point(0, 1210);
+            this.label_NoMore.Location = new System.Drawing.Point(0, 1500);
             this.label_NoMore.Name = "label_NoMore";
             this.label_NoMore.Size = new System.Drawing.Size(755, 20);
             this.label_NoMore.TabIndex = 12;
@@ -912,58 +1156,6 @@
             this.aPI仓库ToolStripMenuItem.Text = "60sAPI仓库*";
             this.aPI仓库ToolStripMenuItem.Click += new System.EventHandler(this.aPI仓库ToolStripMenuItem_Click);
             // 
-            // label_Tools
-            // 
-            this.label_Tools.Font = new System.Drawing.Font("微软雅黑", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_Tools.Location = new System.Drawing.Point(3, 1008);
-            this.label_Tools.Name = "label_Tools";
-            this.label_Tools.Size = new System.Drawing.Size(752, 40);
-            this.label_Tools.TabIndex = 19;
-            this.label_Tools.Text = "🛠实用工具";
-            this.label_Tools.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel_EpicFreeGame
-            // 
-            this.panel_EpicFreeGame.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel_EpicFreeGame.Controls.Add(this.button_EpicFreeGame_Go);
-            this.panel_EpicFreeGame.Controls.Add(this.label_EpicFreeGame_Subtitle);
-            this.panel_EpicFreeGame.Controls.Add(this.label_EpicFreeGame_Title);
-            this.panel_EpicFreeGame.Location = new System.Drawing.Point(3, 1051);
-            this.panel_EpicFreeGame.Name = "panel_EpicFreeGame";
-            this.panel_EpicFreeGame.Size = new System.Drawing.Size(375, 110);
-            this.panel_EpicFreeGame.TabIndex = 20;
-            this.panel_EpicFreeGame.Tag = "";
-            // 
-            // button_EpicFreeGame_Go
-            // 
-            this.button_EpicFreeGame_Go.Location = new System.Drawing.Point(7, 73);
-            this.button_EpicFreeGame_Go.Name = "button_EpicFreeGame_Go";
-            this.button_EpicFreeGame_Go.Size = new System.Drawing.Size(363, 32);
-            this.button_EpicFreeGame_Go.TabIndex = 2;
-            this.button_EpicFreeGame_Go.Tag = "EpicFreeGame";
-            this.button_EpicFreeGame_Go.Text = "前往";
-            this.button_EpicFreeGame_Go.UseVisualStyleBackColor = true;
-            this.button_EpicFreeGame_Go.Click += new System.EventHandler(this.ApiButton_Click);
-            // 
-            // label_EpicFreeGame_Subtitle
-            // 
-            this.label_EpicFreeGame_Subtitle.Location = new System.Drawing.Point(4, 30);
-            this.label_EpicFreeGame_Subtitle.Name = "label_EpicFreeGame_Subtitle";
-            this.label_EpicFreeGame_Subtitle.Size = new System.Drawing.Size(216, 40);
-            this.label_EpicFreeGame_Subtitle.TabIndex = 1;
-            this.label_EpicFreeGame_Subtitle.Text = "每周更新的Epic Games 免费游戏\r\n来源: 60s API\r\n";
-            this.label_EpicFreeGame_Subtitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label_EpicFreeGame_Title
-            // 
-            this.label_EpicFreeGame_Title.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label_EpicFreeGame_Title.Location = new System.Drawing.Point(3, 6);
-            this.label_EpicFreeGame_Title.Name = "label_EpicFreeGame_Title";
-            this.label_EpicFreeGame_Title.Size = new System.Drawing.Size(287, 20);
-            this.label_EpicFreeGame_Title.TabIndex = 0;
-            this.label_EpicFreeGame_Title.Text = "[工具] Epic Games 免费游戏";
-            this.label_EpicFreeGame_Title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // Main_Window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -981,6 +1173,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ApiHub";
             this.panel_main.ResumeLayout(false);
+            this.panel_PublicIP.ResumeLayout(false);
+            this.panel_Fanyi.ResumeLayout(false);
+            this.panel_BaikeSearch.ResumeLayout(false);
+            this.panel_QrcodeBuild.ResumeLayout(false);
+            this.panel_EpicFreeGame.ResumeLayout(false);
             this.panel_MaoyanHot.ResumeLayout(false);
             this.panel_NcmListInfo.ResumeLayout(false);
             this.panel_NcmList.ResumeLayout(false);
@@ -999,7 +1196,6 @@
             this.panel_60sReadWorld.ResumeLayout(false);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
-            this.panel_EpicFreeGame.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1087,6 +1283,22 @@
         private System.Windows.Forms.Button button_EpicFreeGame_Go;
         private System.Windows.Forms.Label label_EpicFreeGame_Subtitle;
         private System.Windows.Forms.Label label_EpicFreeGame_Title;
+        private System.Windows.Forms.Panel panel_QrcodeBuild;
+        private System.Windows.Forms.Button button_QrcodeBuild_Go;
+        private System.Windows.Forms.Label label_QrcodeBuild_Subtitle;
+        private System.Windows.Forms.Label label_QrcodeBuild_Title;
+        private System.Windows.Forms.Panel panel_BaikeSearch;
+        private System.Windows.Forms.Button button_BaikeSearch_Go;
+        private System.Windows.Forms.Label label_BaikeSearch_Subtitle;
+        private System.Windows.Forms.Label label_BaikeSearch_Title;
+        private System.Windows.Forms.Panel panel_Fanyi;
+        private System.Windows.Forms.Button button_Fanyi;
+        private System.Windows.Forms.Label label_Fanyi_Subtitle;
+        private System.Windows.Forms.Label label_Title;
+        private System.Windows.Forms.Panel panel_PublicIP;
+        private System.Windows.Forms.Button button_PublicIP;
+        private System.Windows.Forms.Label label_PublicIP_Subtitle;
+        private System.Windows.Forms.Label label_PublicIP_Title;
     }
 }
 

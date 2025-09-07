@@ -133,11 +133,29 @@
     <Compile Include="apiForms\60sAPI\BaiduTvHot.Designer.cs">
       <DependentUpon>BaiduTvHot.cs</DependentUpon>
     </Compile>
+    <Compile Include="apiForms\60sAPI\BaikeSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="apiForms\60sAPI\BaikeSearch.Designer.cs">
+      <DependentUpon>BaikeSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="apiForms\60sAPI\EpicFreeGame.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="apiForms\60sAPI\EpicFreeGame.Designer.cs">
       <DependentUpon>EpicFreeGame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="apiForms\60sAPI\Fanyi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="apiForms\60sAPI\Fanyi.Designer.cs">
+      <DependentUpon>Fanyi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="apiForms\60sAPI\FanyiList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="apiForms\60sAPI\FanyiList.Designer.cs">
+      <DependentUpon>FanyiList.cs</DependentUpon>
     </Compile>
     <Compile Include="apiForms\60sAPI\MaoyanHot.cs">
       <SubType>Form</SubType>
@@ -162,6 +180,12 @@
     </Compile>
     <Compile Include="apiForms\60sAPI\NcmListInfo_Song.Designer.cs">
       <DependentUpon>NcmListInfo_Song.cs</DependentUpon>
+    </Compile>
+    <Compile Include="apiForms\60sAPI\QrcodeBuild.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="apiForms\60sAPI\QrcodeBuild.Designer.cs">
+      <DependentUpon>QrcodeBuild.cs</DependentUpon>
     </Compile>
     <Compile Include="apiForms\60sAPI\Toutiaohot.cs">
       <SubType>Form</SubType>
@@ -244,8 +268,17 @@
     <EmbeddedResource Include="apiForms\60sAPI\BaiduTvHot.resx">
       <DependentUpon>BaiduTvHot.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="apiForms\60sAPI\BaikeSearch.resx">
+      <DependentUpon>BaikeSearch.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="apiForms\60sAPI\EpicFreeGame.resx">
       <DependentUpon>EpicFreeGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="apiForms\60sAPI\Fanyi.resx">
+      <DependentUpon>Fanyi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="apiForms\60sAPI\FanyiList.resx">
+      <DependentUpon>FanyiList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="apiForms\60sAPI\MaoyanHot.resx">
       <DependentUpon>MaoyanHot.cs</DependentUpon>
@@ -258,6 +291,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="apiForms\60sAPI\NcmListInfo_Song.resx">
       <DependentUpon>NcmListInfo_Song.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="apiForms\60sAPI\QrcodeBuild.resx">
+      <DependentUpon>QrcodeBuild.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="apiForms\60sAPI\Toutiaohot.resx">
       <DependentUpon>Toutiaohot.cs</DependentUpon>

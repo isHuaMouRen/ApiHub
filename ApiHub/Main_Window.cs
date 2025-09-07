@@ -13,6 +13,7 @@ using Funcitons;
 using static Funcitons.NormalFunc;
 using System.Diagnostics;
 using ApiHub.apiForms._60sAPI;
+using System.Net.Http;
 
 namespace ApiHub
 {
@@ -26,7 +27,27 @@ namespace ApiHub
             {
                 public class Root
                 {
-                    public string api_url { get; set; }
+                    public JsonConfig.Config.ApiUrls ApiURLs { get; set; }
+                }
+
+                public class ApiUrls
+                {
+                    public string _60sAPI { get; set; }
+                }
+            }
+
+            public class PublicIP
+            {
+                public class Root
+                {
+                    public int code { get; set; }
+                    public string message { get; set; }
+                    public JsonConfig.PublicIP.Data data { get; set; }
+                }
+
+                public class Data
+                {
+                    public string ip { get; set; }
                 }
             }
         }
@@ -35,7 +56,7 @@ namespace ApiHub
         public static string ConfigPath = $"{RunPath}\\config.json";
         public static string TempPath = $"{Path.GetTempPath()}apitemp.json";
         public static string RootUrl = "https://60s.viki.moe";
-        public static string Version = "Beta 1.4.2.7";
+        public static string Version = "Beta 1.5.2.5";
 
         public static JsonConfig.Config.Root GlobalConfig;
 
@@ -70,8 +91,13 @@ namespace ApiHub
                 public static string ncmList;
                 public static string maoyanHot;
                 public static string epicFreeGame;
+                public static string qrcodeBuild;
+                public static string baikeSearch;
+                public static string fanyi;
+                public static string fanyiList;
+                public static string publicIP;
             }
-            
+
         }
 
 
@@ -85,7 +111,10 @@ namespace ApiHub
             {
                 GlobalConfig = new JsonConfig.Config.Root
                 {
-                    api_url = "cn1",
+                    ApiURLs = new JsonConfig.Config.ApiUrls
+                    {
+                        _60sAPI = "cn1"
+                    }
                 };
 
                 WriteJson<JsonConfig.Config.Root>(ConfigPath, GlobalConfig);
@@ -95,30 +124,30 @@ namespace ApiHub
             //读配置
             GlobalConfig = ReadJson<JsonConfig.Config.Root>(ConfigPath);
 
-            if (GlobalConfig.api_url == "main")
+            if (GlobalConfig.ApiURLs._60sAPI == "main")
             {
                 RootUrl = APIRootURL.main;
             }
-            else if (GlobalConfig.api_url == "sub1")
+            else if (GlobalConfig.ApiURLs._60sAPI == "sub1")
             {
                 RootUrl = APIRootURL.sub1;
             }
-            else if (GlobalConfig.api_url == "sub2")
+            else if (GlobalConfig.ApiURLs._60sAPI == "sub2")
             {
                 RootUrl = APIRootURL.sub2;
             }
-            else if (GlobalConfig.api_url == "cn1")
+            else if (GlobalConfig.ApiURLs._60sAPI == "cn1")
             {
                 RootUrl = APIRootURL.cn1;
             }
-            else if (GlobalConfig.api_url == "cn2")
+            else if (GlobalConfig.ApiURLs._60sAPI == "cn2")
             {
                 RootUrl = APIRootURL.cn2;
             }
             else
             {
-                MessageBox.Show($"在读取配置文件时发现了非法的值\n\n位置:\nRoot -> api_url\n值: {GlobalConfig.api_url}\n\n已将其改为默认值", "警告", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                GlobalConfig.api_url = "cn1";
+                MessageBox.Show($"在读取配置文件时发现了非法的值\n\n位置:\nRoot -> ApiURLs._60sAPI\n值: {GlobalConfig.ApiURLs._60sAPI}\n\n已将其改为默认值", "警告", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                GlobalConfig.ApiURLs._60sAPI = "cn1";
                 WriteJson(ConfigPath, GlobalConfig);
             }
 
@@ -138,6 +167,11 @@ namespace ApiHub
             APIURL._60sAPI.ncmList = $"{RootUrl}/v2/ncm-rank";
             APIURL._60sAPI.maoyanHot = $"{RootUrl}/v2/maoyan";
             APIURL._60sAPI.epicFreeGame = $"{RootUrl}/v2/epic";
+            APIURL._60sAPI.qrcodeBuild = $"{RootUrl}/v2/qrcode";
+            APIURL._60sAPI.baikeSearch = $"{RootUrl}/v2/baike";
+            APIURL._60sAPI.fanyi = $"{RootUrl}/v2/fanyi";
+            APIURL._60sAPI.fanyiList = $"{RootUrl}/v2/fanyi/langs";
+            APIURL._60sAPI.publicIP = $"{RootUrl}/v2/ip";
         }
 
         private void 关于程序ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -163,7 +197,7 @@ namespace ApiHub
             }
         }
 
-        public void ApiButton_Click(object sender, EventArgs e)
+        public async void ApiButton_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
             if (btn == null) return;
@@ -240,6 +274,45 @@ namespace ApiHub
             {
                 window = new EpicFreeGame();
             }
+            else if (tagName == "QrcodeBuild")
+            {
+                window = new QrcodeBuild();
+            }
+            else if (tagName == "BaikeSearch")
+            {
+                window = new BaikeSearch();
+            }
+            else if (tagName == "Fanyi")
+            {
+                window = new Fanyi();
+            }
+            else if (tagName == "PublicIP")
+            {
+                
+                try
+                {
+                    using (HttpClient client = new HttpClient())
+                    {
+                        File.WriteAllText(TempPath, await client.GetStringAsync(APIURL._60sAPI.publicIP));
+                        JsonConfig.PublicIP.Root apiData = ReadJson<JsonConfig.PublicIP.Root>(TempPath);
+
+                        if (apiData.code == 200)
+                        {
+                            MessageBox.Show($"API数据获取成功!\n\n公网IP地址: {apiData.data.ip}", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show($"---Internal error of API---\n\nError code: {apiData.code}\nError message: {apiData.message}", "Internal error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"---Error report---\n\n{ex}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
+            }
 
             else
             {
@@ -253,6 +326,5 @@ namespace ApiHub
             if (window != null) window.ShowDialog();
 
         }
-
     }
 }

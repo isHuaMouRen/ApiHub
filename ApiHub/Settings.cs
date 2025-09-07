@@ -17,23 +17,23 @@ namespace ApiHub
         {
             InitializeComponent();
 
-            if (Main_Window.GlobalConfig.api_url == "main")
+            if (Main_Window.GlobalConfig.ApiURLs._60sAPI == "main")
             {
                 comboBox_api_url.SelectedIndex = 0;
             }
-            else if (Main_Window.GlobalConfig.api_url == "sub1")
+            else if (Main_Window.GlobalConfig.ApiURLs._60sAPI == "sub1")
             {
                 comboBox_api_url.SelectedIndex = 1;
             }
-            else if (Main_Window.GlobalConfig.api_url == "sub2")
+            else if (Main_Window.GlobalConfig.ApiURLs._60sAPI == "sub2")
             {
                 comboBox_api_url.SelectedIndex = 2;
             }
-            else if (Main_Window.GlobalConfig.api_url == "cn1")
+            else if (Main_Window.GlobalConfig.ApiURLs._60sAPI == "cn1")
             {
                 comboBox_api_url.SelectedIndex = 3;
             }
-            else if (Main_Window.GlobalConfig.api_url == "cn2")
+            else if (Main_Window.GlobalConfig.ApiURLs._60sAPI == "cn2")
             {
                 comboBox_api_url.SelectedIndex = 4;
             }
@@ -43,23 +43,23 @@ namespace ApiHub
         {
             if (comboBox_api_url.SelectedIndex == 0)
             {
-                Main_Window.GlobalConfig.api_url = "main";
+                Main_Window.GlobalConfig.ApiURLs._60sAPI = "main";
             }
             else if (comboBox_api_url.SelectedIndex == 1)
             {
-                Main_Window.GlobalConfig.api_url = "sub1";
+                Main_Window.GlobalConfig.ApiURLs._60sAPI = "sub1";
             }
             else if (comboBox_api_url.SelectedIndex == 2)
             {
-                Main_Window.GlobalConfig.api_url = "sub2";
+                Main_Window.GlobalConfig.ApiURLs._60sAPI = "sub2";
             }
             else if (comboBox_api_url.SelectedIndex == 3)
             {
-                Main_Window.GlobalConfig.api_url = "cn1";
+                Main_Window.GlobalConfig.ApiURLs._60sAPI = "cn1";
             }
             else if (comboBox_api_url.SelectedIndex == 4)
             {
-                Main_Window.GlobalConfig.api_url = "cn2";
+                Main_Window.GlobalConfig.ApiURLs._60sAPI = "cn2";
             }
 
 
