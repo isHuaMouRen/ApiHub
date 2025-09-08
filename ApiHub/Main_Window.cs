@@ -14,6 +14,7 @@ using static Funcitons.NormalFunc;
 using System.Diagnostics;
 using ApiHub.apiForms._60sAPI;
 using System.Net.Http;
+using Newtonsoft.Json;
 
 namespace ApiHub
 {
@@ -56,7 +57,7 @@ namespace ApiHub
         public static string ConfigPath = $"{RunPath}\\config.json";
         public static string TempPath = $"{Path.GetTempPath()}apitemp.json";
         public static string RootUrl = "https://60s.viki.moe";
-        public static string Version = "Beta 1.5.2.5";
+        public static string Version = "Beta 1.6.2.2";
 
         public static JsonConfig.Config.Root GlobalConfig;
 
@@ -96,6 +97,7 @@ namespace ApiHub
                 public static string fanyi;
                 public static string fanyiList;
                 public static string publicIP;
+                public static string weather;
             }
 
         }
@@ -122,7 +124,7 @@ namespace ApiHub
 
 
             //读配置
-            GlobalConfig = ReadJson<JsonConfig.Config.Root>(ConfigPath);
+            GlobalConfig = JsonConvert.DeserializeObject<JsonConfig.Config.Root>(File.ReadAllText(ConfigPath));
 
             if (GlobalConfig.ApiURLs._60sAPI == "main")
             {
@@ -172,6 +174,7 @@ namespace ApiHub
             APIURL._60sAPI.fanyi = $"{RootUrl}/v2/fanyi";
             APIURL._60sAPI.fanyiList = $"{RootUrl}/v2/fanyi/langs";
             APIURL._60sAPI.publicIP = $"{RootUrl}/v2/ip";
+            APIURL._60sAPI.weather = $"{RootUrl}/v2/weather";
         }
 
         private void 关于程序ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -293,8 +296,7 @@ namespace ApiHub
                 {
                     using (HttpClient client = new HttpClient())
                     {
-                        File.WriteAllText(TempPath, await client.GetStringAsync(APIURL._60sAPI.publicIP));
-                        JsonConfig.PublicIP.Root apiData = ReadJson<JsonConfig.PublicIP.Root>(TempPath);
+                        JsonConfig.PublicIP.Root apiData = JsonConvert.DeserializeObject<JsonConfig.PublicIP.Root>(await client.GetStringAsync(APIURL._60sAPI.publicIP));
 
                         if (apiData.code == 200)
                         {
@@ -312,6 +314,10 @@ namespace ApiHub
                     MessageBox.Show($"---Error report---\n\n{ex}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 
+            }
+            else if (tagName == "Weather")
+            {
+                window = new Weather();
             }
 
             else

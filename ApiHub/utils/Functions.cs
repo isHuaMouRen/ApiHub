@@ -359,14 +359,10 @@ namespace Funcitons
         /// <summary>
         /// 从JSON文件读取并反序列化为对象
         /// </summary>
-        public static T ReadJson<T>(string filePath)
+        /*public static T ReadJson<T>(string content)
         {
-            if (!File.Exists(filePath))
-                throw new FileNotFoundException($"文件不存在: {filePath}");
-
-            string json = File.ReadAllText(filePath);
-            return JsonConvert.DeserializeObject<T>(json);
-        }
+            JsonConvert.DeserializeObject<xxx>(jsonContent);
+        }*/
 
         /// <summary>
         /// 将对象序列化为JSON并写入文件

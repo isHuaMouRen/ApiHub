@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Funcitons;
+using Newtonsoft.Json;
 using static Funcitons.NormalFunc;
 
 namespace ApiHub.apiForms
@@ -52,8 +53,7 @@ namespace ApiHub.apiForms
 
                 using (HttpClient http = new HttpClient())
                 {
-                    File.WriteAllText(Main_Window.TempPath, await http.GetStringAsync(Main_Window.APIURL._60sAPI._60sReadworld));
-                    apiData = ReadJson<API.Root>(Main_Window.TempPath);
+                    apiData = JsonConvert.DeserializeObject<API.Root>(await http.GetStringAsync(Main_Window.APIURL._60sAPI._60sReadworld));
                 }
 
                 if (apiData.code == 200)

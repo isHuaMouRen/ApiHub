@@ -125,6 +125,10 @@
             this.项目仓库ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.aPI仓库ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel_Weather = new System.Windows.Forms.Panel();
+            this.button_Weather_Go = new System.Windows.Forms.Button();
+            this.label_Weather_Subtitle = new System.Windows.Forms.Label();
+            this.label_Weather_Title = new System.Windows.Forms.Label();
             this.panel_main.SuspendLayout();
             this.panel_PublicIP.SuspendLayout();
             this.panel_Fanyi.SuspendLayout();
@@ -148,12 +152,14 @@
             this.panel_BingWallpaper.SuspendLayout();
             this.panel_60sReadWorld.SuspendLayout();
             this.menuStrip.SuspendLayout();
+            this.panel_Weather.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_main
             // 
             this.panel_main.AutoScroll = true;
             this.panel_main.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_main.Controls.Add(this.panel_Weather);
             this.panel_main.Controls.Add(this.panel_PublicIP);
             this.panel_main.Controls.Add(this.panel_Fanyi);
             this.panel_main.Controls.Add(this.panel_BaikeSearch);
@@ -1156,6 +1162,48 @@
             this.aPI仓库ToolStripMenuItem.Text = "60sAPI仓库*";
             this.aPI仓库ToolStripMenuItem.Click += new System.EventHandler(this.aPI仓库ToolStripMenuItem_Click);
             // 
+            // panel_Weather
+            // 
+            this.panel_Weather.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_Weather.Controls.Add(this.button_Weather_Go);
+            this.panel_Weather.Controls.Add(this.label_Weather_Subtitle);
+            this.panel_Weather.Controls.Add(this.label_Weather_Title);
+            this.panel_Weather.Location = new System.Drawing.Point(380, 1283);
+            this.panel_Weather.Name = "panel_Weather";
+            this.panel_Weather.Size = new System.Drawing.Size(375, 110);
+            this.panel_Weather.TabIndex = 25;
+            this.panel_Weather.Tag = "";
+            // 
+            // button_Weather_Go
+            // 
+            this.button_Weather_Go.Location = new System.Drawing.Point(7, 73);
+            this.button_Weather_Go.Name = "button_Weather_Go";
+            this.button_Weather_Go.Size = new System.Drawing.Size(363, 32);
+            this.button_Weather_Go.TabIndex = 2;
+            this.button_Weather_Go.Tag = "Weather";
+            this.button_Weather_Go.Text = "前往";
+            this.button_Weather_Go.UseVisualStyleBackColor = true;
+            this.button_Weather_Go.Click += new System.EventHandler(this.ApiButton_Click);
+            // 
+            // label_Weather_Subtitle
+            // 
+            this.label_Weather_Subtitle.Location = new System.Drawing.Point(4, 30);
+            this.label_Weather_Subtitle.Name = "label_Weather_Subtitle";
+            this.label_Weather_Subtitle.Size = new System.Drawing.Size(275, 40);
+            this.label_Weather_Subtitle.TabIndex = 1;
+            this.label_Weather_Subtitle.Text = "由腾讯天气提供的实时天气，可智能搜索城市\r\n来源: 60s API\r\n";
+            this.label_Weather_Subtitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label_Weather_Title
+            // 
+            this.label_Weather_Title.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label_Weather_Title.Location = new System.Drawing.Point(3, 6);
+            this.label_Weather_Title.Name = "label_Weather_Title";
+            this.label_Weather_Title.Size = new System.Drawing.Size(287, 20);
+            this.label_Weather_Title.TabIndex = 0;
+            this.label_Weather_Title.Text = "[工具] 实时天气";
+            this.label_Weather_Title.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // Main_Window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -1196,6 +1244,7 @@
             this.panel_60sReadWorld.ResumeLayout(false);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
+            this.panel_Weather.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1299,6 +1348,10 @@
         private System.Windows.Forms.Button button_PublicIP;
         private System.Windows.Forms.Label label_PublicIP_Subtitle;
         private System.Windows.Forms.Label label_PublicIP_Title;
+        private System.Windows.Forms.Panel panel_Weather;
+        private System.Windows.Forms.Button button_Weather_Go;
+        private System.Windows.Forms.Label label_Weather_Subtitle;
+        private System.Windows.Forms.Label label_Weather_Title;
     }
 }
 

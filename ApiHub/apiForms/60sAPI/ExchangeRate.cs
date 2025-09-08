@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -52,8 +53,7 @@ namespace ApiHub.apiForms
 
                 using (HttpClient client = new HttpClient())
                 {
-                    File.WriteAllText(Main_Window.TempPath, await client.GetStringAsync(Main_Window.APIURL._60sAPI.exchangeRate));
-                    APIData = ReadJson<API.Root>(Main_Window.TempPath); 
+                    APIData = JsonConvert.DeserializeObject<API.Root>(await client.GetStringAsync(Main_Window.APIURL._60sAPI.exchangeRate));
                 }
 
                 if (APIData.code == 200)

@@ -46,8 +46,7 @@ namespace ApiHub.apiForms._60sAPI
 
                 using (HttpClient client = new HttpClient())
                 {
-                    File.WriteAllText(Main_Window.TempPath, await client.GetStringAsync($"{Main_Window.APIURL._60sAPI.baikeSearch}?word={textBox_Search.Text}"));
-                    apiData = Funcitons.NormalFunc.ReadJson<JsonConfig.Root>(Main_Window.TempPath);
+                    apiData = JsonConvert.DeserializeObject<JsonConfig.Root>(await client.GetStringAsync($"{Main_Window.APIURL._60sAPI.baikeSearch}?word={textBox_Search.Text}"));
 
                     Stream stream = await client.GetStreamAsync($"{apiData.data.cover}");
                     pictureBox1.Image = Image.FromStream(stream);

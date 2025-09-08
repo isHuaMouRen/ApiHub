@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Funcitons;
+using Newtonsoft.Json;
 
 namespace ApiHub.apiForms
 {
@@ -45,8 +46,7 @@ namespace ApiHub.apiForms
 
                 using (HttpClient client = new HttpClient())
                 {
-                    File.WriteAllText(Main_Window.TempPath, await client.GetStringAsync(Main_Window.APIURL._60sAPI.baiduTvHot));
-                    apiData = Funcitons.NormalFunc.ReadJson<JsonConfig.Root>(Main_Window.TempPath);
+                    apiData = JsonConvert.DeserializeObject<JsonConfig.Root>(await client.GetStringAsync(Main_Window.APIURL._60sAPI.baiduTvHot));
                 }
 
                 if (apiData.code == 200)

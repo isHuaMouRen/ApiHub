@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Funcitons;
+using Newtonsoft.Json;
 
 namespace ApiHub.apiForms._60sAPI
 {
@@ -46,8 +47,7 @@ namespace ApiHub.apiForms._60sAPI
 
                 using (HttpClient client = new HttpClient())
                 {
-                    File.WriteAllText(Main_Window.TempPath, await client.GetStringAsync(Main_Window.APIURL._60sAPI.ncmList));
-                    apiData = NormalFunc.ReadJson<JsonConfig.Root>(Main_Window.TempPath);
+                    apiData = JsonConvert.DeserializeObject<JsonConfig.Root>(await client.GetStringAsync(Main_Window.APIURL._60sAPI.ncmList));
                 }
 
                 if (apiData.code == 200)

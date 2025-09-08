@@ -193,6 +193,12 @@
     <Compile Include="apiForms\60sAPI\Toutiaohot.Designer.cs">
       <DependentUpon>Toutiaohot.cs</DependentUpon>
     </Compile>
+    <Compile Include="apiForms\60sAPI\Weather.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="apiForms\60sAPI\Weather.Designer.cs">
+      <DependentUpon>Weather.cs</DependentUpon>
+    </Compile>
     <Compile Include="apiForms\60sAPI\WeiboHot.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -297,6 +303,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="apiForms\60sAPI\Toutiaohot.resx">
       <DependentUpon>Toutiaohot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="apiForms\60sAPI\Weather.resx">
+      <DependentUpon>Weather.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="apiForms\60sAPI\WeiboHot.resx">
       <DependentUpon>WeiboHot.cs</DependentUpon>
