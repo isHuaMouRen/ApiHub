@@ -57,7 +57,7 @@ namespace ApiHub
         public static string ConfigPath = $"{RunPath}\\config.json";
         public static string TempPath = $"{Path.GetTempPath()}apitemp.json";
         public static string RootUrl = "https://60s.viki.moe";
-        public static string Version = "Beta 1.6.2.2";
+        public static string Version = "Release 1.0.0.0";
 
         public static JsonConfig.Config.Root GlobalConfig;
 
